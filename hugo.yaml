@@ -1,0 +1,45 @@
+baseURL : https://yjchoo.github.io/techblog/
+languageCode : en-us
+title : Juan's Tech Blog
+theme : PaperMod
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+params:
+    env: production
+    title: Juan's Tech Blog
+    description: "Writing about DIY, home automation, smart home, Arduino, coding, and home improvement projects with step-by-step guides and tutorials."
+    defaultTheme: auto
+    homeInfoParams:
+        Title: Juan
+        Content: Join my journey of DIY, home automation, smart home, Arduino, coding, and home improvement projects.
+    socialIcons: # optional
+        - name: "youtube"
+          title: "YouTube"
+          url: "https://youtube.com/@juanthemaker"
+        - name: "other"
+          title: "Juan's Blog"
+          url: "http://yjchoo.github.io/blog"
+        - name: "other"
+          title: "Juan's Tech Blog"
+          url: "https://juanstechblog.blogspot.com/"
+        - name: kofi
+          title: "Ko-fi"
+          url: https://ko-fi.com/juanonkofi
+    ShowShareButtons: true
+    ShowPostNavLinks: true
+    analytics:
+      google:
+        SiteVerificationTag: ""
+    comments: true
+
+menu:
+  main:
+    - name: Search
+      url: search/
+      weight: 10
+
+googleAnalytics:
