@@ -24,7 +24,7 @@ params:
           title: "Juan's Blog"
           url: "http://yjchoo.github.io/blog"
         - name: "other"
-          title: "Juan's Tech Blog"
+          title: "Juan's Tech Blog(archive)"
           url: "https://juanstechblog.blogspot.com/"
         - name: kofi
           title: "Ko-fi"
