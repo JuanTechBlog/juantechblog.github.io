@@ -3,6 +3,7 @@ title: "Fixing Washing Machine Water Fill Issue."
 description: "Just repaired my washing machine water flow slow or water pressure low issue."
 date: "2024-01-22"
 tags: ["Repair", "YouTube"]
+draft: false
 cover:
     image: water-inlet-valve-from-washing-machine.webp
     alt: "Water inlet valve from washing machine"
