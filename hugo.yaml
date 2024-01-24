@@ -1,7 +1,10 @@
 baseURL : https://yjchoo.github.io/techblog/
 languageCode : en-us
 title : Juan's Tech Blog
+paginate: 5
 theme : PaperMod
+
+enableRobotsTXT: true
 
 outputs:
     home:
