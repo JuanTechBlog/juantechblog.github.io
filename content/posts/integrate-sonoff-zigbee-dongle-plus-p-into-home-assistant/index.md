@@ -4,6 +4,7 @@ description: ""
 date: "2024-01-23"
 tags: ["Home Automation", "Smart Home", "Zigbee", "Home Assistant", "Docker", "Docker Compose"]
 draft: false
+ShowToc: true
 cover:
     image: sonoff-zigbee-3-usb-dongle-plus-p.webp
     alt: "SONOFF Zigbee 3.0 USB Dongle Plus-P"

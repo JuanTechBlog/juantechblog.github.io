@@ -32,8 +32,12 @@ params:
         - name: kofi
           title: "Ko-fi"
           url: https://ko-fi.com/juanonkofi
+    ShowReadingTime: true
     ShowShareButtons: true
     ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowWordCount: true
+    UseHugoToc: true
     analytics:
       google:
         SiteVerificationTag: "8tuuNRZtCnIRwkCljQTqQ_4KvsAJ-_jqNhFgewUSIFU"
