@@ -3,7 +3,7 @@ title: "Integrate SONOFF Zigbee USB Dongle 3.0 Plus-P into Home Assistant."
 description: ""
 date: "2024-01-23"
 tags: ["Home Automation", "Smart Home", "Zigbee", "Home Assistant", "Docker", "Docker Compose"]
-draft: true
+draft: false
 cover:
     image: sonoff-zigbee-3-usb-dongle-plus-p.webp
     alt: "SONOFF Zigbee 3.0 USB Dongle Plus-P"
