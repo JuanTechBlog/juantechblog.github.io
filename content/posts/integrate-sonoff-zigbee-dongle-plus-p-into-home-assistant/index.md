@@ -9,7 +9,7 @@ cover:
     image: sonoff-zigbee-3-usb-dongle-plus-p.webp
     alt: "SONOFF Zigbee 3.0 USB Dongle Plus-P"
     caption: "SONOFF Zigbee 3.0 USB Dongle Plus-P"
-    relative: false
+    relative: true
 ---
 
 Recently, I bought the SONOFF Zigbee 3.0 USB Dongle Plus-P with a great deal. It was RM 84.95 and dropped to RM 64.84. 

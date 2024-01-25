@@ -4,11 +4,12 @@ description: "Just repaired my washing machine water flow slow or water pressure
 date: "2024-01-22"
 tags: ["Repair", "YouTube"]
 draft: false
+ShowToc: true
 cover:
     image: water-inlet-valve-from-washing-machine.webp
     alt: "Water inlet valve from washing machine"
     caption: "Water inlet valve from washing machine"
-    relative: false
+    relative: true
 ---
 
 
