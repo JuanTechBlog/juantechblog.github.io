@@ -14,7 +14,7 @@ cover:
 
 Recently, I bought the SONOFF Zigbee 3.0 USB Dongle Plus-P with a great deal. It was RM 84.95 and dropped to RM 64.84. 
 
-At first, I don't plan to use it. I don't have a Zigbee device. Somehow, my newly brought SONOFF SwitchMan M5 smart switch has an issue with my outlet's neutral wire. The ELCB trips immediately after I switch on the outlet's circuit breaker. To make my life easier, I replace it with a Smaturl Zigbee Smart Switch. Now, I can use it as a Zigbee hub/coordinator and integrate it into Home Assistant. 
+At first, I don't plan to use it. I don't have a Zigbee device. Somehow, my newly brought SONOFF SwitchMan M5 smart switch has an issue with my outlet's neutral wire. [The ELCB trips immediately after I switch on the outlet's circuit breaker.](https://yjchoo.github.io/blog/posts/install-smart-switch-cause-elcb-trip/) To make my life easier, I replace it with a Smaturl Zigbee Smart Switch. Now, I can use it as a Zigbee hub/coordinator and integrate it into Home Assistant. 
 
 My Home Assistant runs in Docker container using Docker Compose on Debian, so I will integrate my Zigbee dongle in the Docker Compose way.
 
