@@ -1,6 +1,6 @@
 ---
 title: "Integrate SONOFF Zigbee USB Dongle 3.0 Plus-P into Home Assistant."
-description: ""
+description: "I just learned how to mount the Zigbee dongle into Docker container and integrate it into Home Assistant."
 date: "2024-01-23"
 tags: ["Home Automation", "Smart Home", "Zigbee", "Home Assistant", "Docker", "Docker Compose"]
 draft: false
