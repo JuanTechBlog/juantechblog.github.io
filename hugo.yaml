@@ -29,6 +29,9 @@ params:
         - name: "other"
           title: "Juan's Tech Blog(archive)"
           url: "https://juanstechblog.blogspot.com/"
+        - name: "mastodon"
+          title: "Mastodon"
+          url: "https://mastodon.social/@JuanJuanJuan"
         - name: kofi
           title: "Ko-fi"
           url: https://ko-fi.com/juanonkofi
