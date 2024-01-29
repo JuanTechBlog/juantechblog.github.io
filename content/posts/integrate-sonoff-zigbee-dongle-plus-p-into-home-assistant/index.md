@@ -76,11 +76,11 @@ $ docker compose up -d
 
 Next, configure the Zigbee dongle in Home Assistant according to below:
 
-1. Go to Settings.
-2. Click the ADD INTEGRATION button.
-3. Search Zigbee Home Automation and select it twice. 
-4. Select the Zigbee dongle's device path(/dev/ttyUSB0).
-5. Select Create a new network for network formation.
+1. Go to __*Settings*__.
+2. Click the __*ADD INTEGRATION*__ button.
+3. Search __*Zigbee Home Automation*__ and select it twice. 
+4. Select the Zigbee dongle's device path(__*/dev/ttyUSB0*__).
+5. Select __*Create a new network*__ for network formation.
 6. Done
 
 ## Paring Zigbee devices
@@ -90,9 +90,9 @@ For my Smatrul Zigbee Switch, long press any button until the LED indicator ligh
 
 Afterward, we go back to the Home Assistant following below:
 
-1. Go to Settings.
-2. Click the ADD INTEGRATION button.
-3. Search and select Add Zigbee Device.
+1. Go to __*Settings*__.
+2. Click the __*ADD INTEGRATION*__ button.
+3. Search and select __*Add Zigbee Device*__.
 4. Devices should be discovered in the page.
 
 ## Conclude
