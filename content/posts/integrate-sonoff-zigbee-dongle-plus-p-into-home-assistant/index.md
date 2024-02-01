@@ -20,6 +20,10 @@ My Home Assistant runs in Docker container using Docker Compose on Debian, so I 
 
 Let's begin.
 
+## Video
+
+{{< youtube dWgu0w2JInU>}}
+
 ## Plug and Mount Zigbee Dongle into Docker Container
 
 ![SONOFF Zigbee 3.0 USB Dongle Plus-P plugged into Orange Pi Zero 3](sonoff-zigbee-3-usb-dongle-plus-p-connected-to-orange-pi-zero-3.webp)
