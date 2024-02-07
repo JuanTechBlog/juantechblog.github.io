@@ -44,6 +44,8 @@ params:
     analytics:
       google:
         SiteVerificationTag: "8tuuNRZtCnIRwkCljQTqQ_4KvsAJ-_jqNhFgewUSIFU"
+      pinterest:
+        SiteVerificationTag: "4c9d562e28b4de57ed6a24d880b66fc0"
     comments: true
 
 menu:

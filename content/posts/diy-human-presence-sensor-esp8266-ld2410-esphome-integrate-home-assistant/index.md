@@ -2,7 +2,7 @@
 title: "Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant."
 description: "Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant."
 date: "2024-01-29"
-tags: ["Home Automation", "Smart Home", "ESPHome", "Home Assistant", "ESP8266", "LD2410", "Human Presence Sensor", "DIY"]
+tags: ["Home Automation", "Smart Home", "ESPHome", "Home Assistant", "ESP8266", "LD2410", "Human Presence Sensor", "DIY", "YouTube"]
 draft: false
 ShowToc: true
 canonicalURL: "https://juanstechblog.blogspot.com/2023/12/build-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.html"
