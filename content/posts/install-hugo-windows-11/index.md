@@ -5,7 +5,7 @@ date: "2024-03-16"
 tags: ["Hugo", "Windows 11", "Go", "Golang", "Git"]
 draft: false
 ShowToc: true
-draft: true
+draft: false
 cover:
     image: how-to-install-hugo-on-windows11.webp
     alt: "How to Install Hugo on Windows 11 cover"
