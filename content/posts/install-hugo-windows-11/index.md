@@ -7,6 +7,8 @@ draft: false
 ShowToc: true
 draft: false
 canonicalURL: "https://juanstechblog.blogspot.com/2024/03/how-to-install-hugo-on-windows-11.html"
+ShowCanonicalLink: true
+CanonicalLinkText: "Originally published at Juan's Tech Blog(Blogger/Blogspot)"
 cover:
     image: how-to-install-hugo-on-windows11.webp
     alt: "How to Install Hugo on Windows 11 cover"
