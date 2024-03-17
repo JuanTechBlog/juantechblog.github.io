@@ -6,6 +6,7 @@ tags: ["Hugo", "Windows 11", "Go", "Golang", "Git"]
 draft: false
 ShowToc: true
 draft: false
+canonicalURL: "https://juanstechblog.blogspot.com/2024/03/how-to-install-hugo-on-windows-11.html"
 cover:
     image: how-to-install-hugo-on-windows11.webp
     alt: "How to Install Hugo on Windows 11 cover"
@@ -21,7 +22,7 @@ Let's install it.
 
 ## Install Go/Golang
 
-Download the Go/Golang installer from the Go website.
+Download the Go/Golang installer from the Go [website](https://go.dev/dl/).
 
 Run it and proceed until complete.
 
@@ -37,7 +38,7 @@ go version go1.22.1 windows/amd64
 
 ## Install Git
 
-Download the Git installer from the official website.
+Download the Git installer from the [official website](https://git-scm.com/download/win).
 
 Run it and proceed until complete. Most of the settings are default, I only change the text editor to Visual Studio Code.
 
