@@ -16,6 +16,9 @@ I know a ready-made LED controller is affordable. But I think ESP32 with WLED is
 
 Let's get started.
 
+## Video
+{{< youtube GwjAe-mXsfs >}}
+
 ## Parts Required
 - 5M WS2812B 30LED/M LED Light Strip(Get any desire length).
 - ESP 32(Any ESP8266/ESP32).
