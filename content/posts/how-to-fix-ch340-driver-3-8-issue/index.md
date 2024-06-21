@@ -29,7 +29,7 @@ Here how you can do the same:
 2. Right the CH340 device and click **Properties**.
 3. The **driver version** is under **Driver** tab.
 4. If the version is not right, click the **Uninstall Device**.
-5. Download the 3.4 version and install.
+5. Download the [3.4 version](https://sparks.gogo.co.nz/ch340.html) and install.
 
 
 ## Windows 11 Auto Update Drive, Break the CH340 Driver Again.
