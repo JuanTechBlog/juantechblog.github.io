@@ -1,6 +1,6 @@
 ---
 title: "Running LLM and Stable Diffusion Locally on My Low-End Hardware"
-description: ""
+description: "Try running Llama 3.2 1B Q8, Llama 3.2 3B Q8 & Stable Diffusion 1.5 on Intel UHD Graphics 630. Also, try to run AI models on the CPU."
 date: "2024-10-28"
 tags: ["AI", "LLM", "Stable Diffusion 1.5", "Llama 3.2 1B Q8", Llama 3.2 3B Q8, "Jan AI", "stable-diffusion.cpp", "Vulkan", "AVX2"]
 draft: false
