@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arduino on Juan&#39;s Tech Blog</title>
+    <link>http://localhost:1313/tags/arduino/</link>
+    <description>Recent content in Arduino on Juan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 21 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Fix CH340 USB to Serial Driver 3.8 version issue.</title>
+      <link>http://localhost:1313/posts/how-to-fix-ch340-driver-3-8-issue/</link>
+      <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/how-to-fix-ch340-driver-3-8-issue/</guid>
+      <description>CH340 USB-to-Serial Driver 3.8 version issue. It cause the Arduino IDE prompt &amp;#34;A device attached to the system is not functioning&amp;#34; error message.</description>
+    </item>
+  </channel>
+</rss>

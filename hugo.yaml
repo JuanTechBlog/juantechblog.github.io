@@ -5,6 +5,7 @@ paginate: 5
 theme : PaperMod
 
 enableRobotsTXT: true
+enableEmoji: true
 
 outputs:
     home:

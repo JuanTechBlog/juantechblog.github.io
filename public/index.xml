@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Juan&#39;s Tech Blog</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Juan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running LLM and Stable Diffusion Locally on My Low-End Hardware</title>
+      <link>http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/</guid>
+      <description>Let&amp;rsquo;s start with my PC spec.
+Components Parts Processor Intel i5 10400ES iGPU Intel UHD Graphics 630 Motherboard AsRock B460M Pro RAM Adata DDR4-2666 4GB x2 dGPU N/A When it comes to AI, most people probably think it requires a beefy GPU to run smoothly and quickly. And that&amp;rsquo;s true. But just how bad will it be when running AI on a low-end GPU?
+How to run LLM and Stable Diffusion on Intel UHD 630 iGPU?</description>
+    </item>
+    <item>
+      <title>How to Access Home Assistant Remotely.</title>
+      <link>http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</guid>
+      <description>Step-by-step guides to get a .PP.UA domain, set up Cloudfalre as your nameserver, configure Cloudflare Tunnel, install Cloudflare Tunnel docker client and configure Home Assistant.</description>
+    </item>
+    <item>
+      <title>Xiaomi Smart Speaker Lite Review</title>
+      <link>http://localhost:1313/posts/xiaomi-smart-speaker-lite-review/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/xiaomi-smart-speaker-lite-review/</guid>
+      <description>It&amp;#39;s a good affordable AirPlay 2 Speaker.</description>
+    </item>
+    <item>
+      <title>How to Fix CH340 USB to Serial Driver 3.8 version issue.</title>
+      <link>http://localhost:1313/posts/how-to-fix-ch340-driver-3-8-issue/</link>
+      <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/how-to-fix-ch340-driver-3-8-issue/</guid>
+      <description>CH340 USB-to-Serial Driver 3.8 version issue. It cause the Arduino IDE prompt &amp;#34;A device attached to the system is not functioning&amp;#34; error message.</description>
+    </item>
+    <item>
+      <title>Easy DIY Monitor Riser/Stand.</title>
+      <link>http://localhost:1313/posts/easy-diy-monitor-riser-stand/</link>
+      <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/easy-diy-monitor-riser-stand/</guid>
+      <description>Build a Monitor riser/stand with the IKEA wall shelf and furniture legs.</description>
+    </item>
+    <item>
+      <title>DIY WS2812B Addressable LED Light Strip Controller with ESP32 and WLED.</title>
+      <link>http://localhost:1313/posts/diy-ws2812b-led-light-strip-controller-esp32-wled/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/diy-ws2812b-led-light-strip-controller-esp32-wled/</guid>
+      <description>Guide to Build a WS2812B Addressable LED Light Strip Controller with ESP32 and WLED.</description>
+    </item>
+    <item>
+      <title>How to install Hugo on Windows 11.</title>
+      <link>http://localhost:1313/posts/install-hugo-windows-11/</link>
+      <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/install-hugo-windows-11/</guid>
+      <description>I just learned how to install Hugo with Go/Golang and Git.</description>
+    </item>
+    <item>
+      <title>Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant.</title>
+      <link>http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/</guid>
+      <description>Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant.</description>
+    </item>
+    <item>
+      <title>Integrate SONOFF Zigbee USB Dongle 3.0 Plus-P into Home Assistant.</title>
+      <link>http://localhost:1313/posts/integrate-sonoff-zigbee-dongle-plus-p-into-home-assistant/</link>
+      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/integrate-sonoff-zigbee-dongle-plus-p-into-home-assistant/</guid>
+      <description>I just learned how to mount the Zigbee dongle into Docker container and integrate it into Home Assistant.</description>
+    </item>
+    <item>
+      <title>Fixing Washing Machine Water Fill Issue.</title>
+      <link>http://localhost:1313/posts/fix-washing-machine-water-fill-issue/</link>
+      <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/fix-washing-machine-water-fill-issue/</guid>
+      <description>Just repaired my washing machine water flow slow or water pressure low issue.</description>
+    </item>
+    <item>
+      <title>DIY a Floating Wall Mounted TV Console Part 1: Preparation</title>
+      <link>http://localhost:1313/posts/diy-floating-tv-cabinet-part-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/diy-floating-tv-cabinet-part-1/</guid>
+      <description>Before building a floating TV cabinet, </description>
+    </item>
+  </channel>
+</rss>

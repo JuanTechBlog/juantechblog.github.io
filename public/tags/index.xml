@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Juan&#39;s Tech Blog</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Juan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>http://localhost:1313/tags/ai/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AVX2</title>
+      <link>http://localhost:1313/tags/avx2/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/avx2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jan AI</title>
+      <link>http://localhost:1313/tags/jan-ai/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/jan-ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Llama 3.2 1B Q8</title>
+      <link>http://localhost:1313/tags/llama-3.2-1b-q8/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/llama-3.2-1b-q8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Llama 3.2 3B Q8</title>
+      <link>http://localhost:1313/tags/llama-3.2-3b-q8/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/llama-3.2-3b-q8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>http://localhost:1313/tags/llm/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stable Diffusion 1.5</title>
+      <link>http://localhost:1313/tags/stable-diffusion-1.5/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/stable-diffusion-1.5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stable-Diffusion.cpp</title>
+      <link>http://localhost:1313/tags/stable-diffusion.cpp/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/stable-diffusion.cpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vulkan</title>
+      <link>http://localhost:1313/tags/vulkan/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/vulkan/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>.PP.UA Domain</title>
+      <link>http://localhost:1313/tags/.pp.ua-domain/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/.pp.ua-domain/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloudflare</title>
+      <link>http://localhost:1313/tags/cloudflare/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cloudflare/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>http://localhost:1313/tags/docker/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker Compose</title>
+      <link>http://localhost:1313/tags/docker-compose/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/docker-compose/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Home Assistant</title>
+      <link>http://localhost:1313/tags/home-assistant/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/home-assistant/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AirPlay 2</title>
+      <link>http://localhost:1313/tags/airplay-2/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/airplay-2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bluetooth Speaker</title>
+      <link>http://localhost:1313/tags/bluetooth-speaker/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bluetooth-speaker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Review</title>
+      <link>http://localhost:1313/tags/review/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/review/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Smart Speaker</title>
+      <link>http://localhost:1313/tags/smart-speaker/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/smart-speaker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xiaomi</title>
+      <link>http://localhost:1313/tags/xiaomi/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/xiaomi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Arduino</title>
+      <link>http://localhost:1313/tags/arduino/</link>
+      <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/arduino/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CH340</title>
+      <link>http://localhost:1313/tags/ch340/</link>
+      <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ch340/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DIY</title>
+      <link>http://localhost:1313/tags/diy/</link>
+      <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/diy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IKEA</title>
+      <link>http://localhost:1313/tags/ikea/</link>
+      <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ikea/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wood Working</title>
+      <link>http://localhost:1313/tags/wood-working/</link>
+      <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/wood-working/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Addressable LED Light Strip</title>
+      <link>http://localhost:1313/tags/addressable-led-light-strip/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/addressable-led-light-strip/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ESP32</title>
+      <link>http://localhost:1313/tags/esp32/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/esp32/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WLED</title>
+      <link>http://localhost:1313/tags/wled/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/wled/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WS2812B</title>
+      <link>http://localhost:1313/tags/ws2812b/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ws2812b/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>http://localhost:1313/tags/git/</link>
+      <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>http://localhost:1313/tags/go/</link>
+      <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Golang</title>
+      <link>http://localhost:1313/tags/golang/</link>
+      <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/golang/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>http://localhost:1313/tags/hugo/</link>
+      <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows 11</title>
+      <link>http://localhost:1313/tags/windows-11/</link>
+      <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/windows-11/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ESP8266</title>
+      <link>http://localhost:1313/tags/esp8266/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/esp8266/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ESPHome</title>
+      <link>http://localhost:1313/tags/esphome/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/esphome/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Home Automation</title>
+      <link>http://localhost:1313/tags/home-automation/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/home-automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Human Presence Sensor</title>
+      <link>http://localhost:1313/tags/human-presence-sensor/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/human-presence-sensor/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LD2410</title>
+      <link>http://localhost:1313/tags/ld2410/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ld2410/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Smart Home</title>
+      <link>http://localhost:1313/tags/smart-home/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/smart-home/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>YouTube</title>
+      <link>http://localhost:1313/tags/youtube/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/youtube/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Zigbee</title>
+      <link>http://localhost:1313/tags/zigbee/</link>
+      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/zigbee/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Repair</title>
+      <link>http://localhost:1313/tags/repair/</link>
+      <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/repair/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Floating Wall Mounted TV Console</title>
+      <link>http://localhost:1313/tags/floating-wall-mounted-tv-console/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/floating-wall-mounted-tv-console/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TV Wall Upgrage Project</title>
+      <link>http://localhost:1313/tags/tv-wall-upgrage-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/tv-wall-upgrage-project/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

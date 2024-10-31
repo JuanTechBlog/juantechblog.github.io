@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant. | Juan&#39;s Tech Blog</title>
+<meta name="keywords" content="Home Automation, Smart Home, ESPHome, Home Assistant, ESP8266, LD2410, Human Presence Sensor, DIY, YouTube">
+<meta name="description" content="Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant.">
+<meta name="author" content="">
+<link rel="canonical" href="https://juanstechblog.blogspot.com/2023/12/build-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.html">
+<meta name="google-site-verification" content="8tuuNRZtCnIRwkCljQTqQ_4KvsAJ-_jqNhFgewUSIFU">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.4599eadb9eb2ad3d0a8d6827b41a8fda8f2f4af226b63466c09c5fddbc8706b7.css" integrity="sha256-RZnq256yrT0KjWgntBqP2o8vSvImtjRmwJxf3byHBrc=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634877819425351"
+     crossorigin="anonymous"></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPQZ6L0MQS"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-VPQZ6L0MQS');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant." />
+<meta property="og:description" content="Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/" />
+<meta property="og:image" content="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-29T00:00:00+00:00" /><meta property="og:site_name" content="Juan&#39;s Tech Blog" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp" />
+<meta name="twitter:title" content="Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant."/>
+<meta name="twitter:description" content="Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant.",
+      "item": "http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant.",
+  "name": "Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant.",
+  "description": "Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant.",
+  "keywords": [
+    "Home Automation", "Smart Home", "ESPHome", "Home Assistant", "ESP8266", "LD2410", "Human Presence Sensor", "DIY", "YouTube"
+  ],
+  "articleBody": "The photo above is my cheap human presence sensor with ESP8266 and LD2410C mmWave radar sensor. It costs about RM 27—ESP8266-RM 9.90 and LD2410C-RM 17.61.\nThis is my first time using ESPHome and LD2410. The LD2410C mmWave radio sensor module comes with Bluetooth connectivity, and Home Assistant has an integration for this sensor module. We can power the LD2410C and directly integrate the sensor module into Home Assistant via Bluetooth.\nSomehow, the Bluetooth connection between the Home Assistant and LD2410C is unstable and breaks every few minutes. Therefore, I use an ESP8266 hook with LD2410C, run ESPHome, and integrate it into Home Assistant via Wi-Fi.\nLet’s build it.\nParts Required ESP8266 development board - Also, any ESP32 development. HLK-LD2410C mmWave Radar Sensor Module - Any LD2410 variant. A few jumper wires. USB Cable. Breadboard - if necessary. Power Adapter - if necessary. Flash ESPHome into ESP8266 We will use the ESPHome’s install ready-made project method to flash the firmware into our ESP8266 development board and adopt it in the ESPHome Dashboard. This method only works with Chrome and Microsoft Edge browsers. Also, it may need the development board’s USB driver.\nConnect ESP8266 to the computer via a USB cable. Log on to ESPHome’s web page. Select Empty ESPHome device under the I want to create a: section, pick ESP32/ESP8266 under the manufacturer of the device you want to set up section, and click CONNECT button. Select the corresponding USB serial port in the pop-out window. Click the INSTALL ESPHOME WEB. Configure the Wi-Fi. After, we can leave the ESP8266 alone, keep it powered, and upload a new configuration(yaml) through wireless in the ESPHome Dashboard later.\nSet up ESPHome Dashboard using Docker Compose Next, We run the ESPHome Dashboard in a Docker container using Docker Compose.\nWe can create a new or modify existing docker-compose.yaml as below:\nThe script below is from the official documentation.\nversion: '3' services: esphome: container_name: esphome image: ghcr.io/esphome/esphome volumes: - /path/to/esphome/config:/config - /etc/localtime:/etc/localtime:ro restart: always privileged: true network_mode: host environment: - USERNAME=ChangeHere - PASSWORD=ChangeHere Remember to change the USERNAME and PASSWORD variables in the environment.\nWe can execute the command below to start the container.\n$ docker compose up -d Once the ESPHome Dashboard is started, we can log on to the web page.\nhttp://:6052/ Adopt ESP8266 in ESPhome Dashboard After logging in to the ESPHome Dashboard, the newly flashed firmware ESP8266 should appear in the dashboard. We click the ADOPT button to adopt the ESP8266. It will take a few minutes to complete.\nLater, click the EDIT button, modify the script as below, and save it:\n# Append code below the captive_portal # ... ... uart: id: uart_ld2410 tx_pin: GPIO1 rx_pin: GPIO3 baud_rate: 256000 parity: NONE stop_bits: 1 ld2410: uart_id: uart_ld2410 binary_sensor: - platform: ld2410 has_target: name: Presence has_moving_target: name: Moving Target has_still_target: name: Still Target sensor: - platform: ld2410 light: name: light moving_distance: name : Moving Distance still_distance: name: Still Distance moving_energy: name: Move Energy still_energy: name: Still Energy detection_distance: name: Detection Distance g0: move_energy: name: g0 move energy still_energy: name: g0 still energy g1: move_energy: name: g1 move energy still_energy: name: g1 still energy g2: move_energy: name: g2 move energy still_energy: name: g2 still energy g3: move_energy: name: g3 move energy still_energy: name: g3 still energy g4: move_energy: name: g4 move energy still_energy: name: g4 still energy g5: move_energy: name: g5 move energy still_energy: name: g5 still energy g6: move_energy: name: g6 move energy still_energy: name: g6 still energy g7: move_energy: name: g7 move energy still_energy: name: g7 still energy g8: move_energy: name: g8 move energy still_energy: name: g8 still energy switch: - platform: ld2410 engineering_mode: name: \"engineering mode\" bluetooth: name: \"control bluetooth\" number: - platform: ld2410 timeout: name: timeout light_threshold: name: light threshold max_move_distance_gate: name: max move distance gate max_still_distance_gate: name: max still distance gate g0: move_threshold: name: g0 move threshold still_threshold: name: g0 still threshold g1: move_threshold: name: g1 move threshold still_threshold: name: g1 still threshold g2: move_threshold: name: g2 move threshold still_threshold: name: g2 still threshold g3: move_threshold: name: g3 move threshold still_threshold: name: g3 still threshold g4: move_threshold: name: g4 move threshold still_threshold: name: g4 still threshold g5: move_threshold: name: g5 move threshold still_threshold: name: g5 still threshold g6: move_threshold: name: g6 move threshold still_threshold: name: g6 still threshold g7: move_threshold: name: g7 move threshold still_threshold: name: g7 still threshold g8: move_threshold: name: g8 move threshold still_threshold: name: g8 still threshold button: - platform: ld2410 factory_reset: name: \"factory reset\" restart: name: \"restart\" query_params: name: query params text_sensor: - platform: ld2410 version: name: \"firmware version\" mac_address: name: \"mac address\" select: - platform: ld2410 distance_resolution: name: \"distance resolution\" baud_rate: name: \"baud rate\" light_function: name: light function Then, we click the VALIDATE button in the ⋮(three vertical dots button) to ensure the script is valid.\nHit the INSTALL button in n the ⋮(three vertical dots button) to upload the new configuration into ESP8266.\nESP8266, LD2410 and Parts Assembly. Now, we can unplug the USB cable and wire up the LD2410C sensor module with ESP8266.\nWire the ESP8266 and LD2410 as below:\nESP8266 LD2410 RX(GPIO3) TX TX(GPIO1) RX VIN VCC GND GND Integrate ESPHome Device into Home Assistant The last step is to integrate the ESPHome device into Home Assistant.\nGet the ESPHome device’s API key in the ESPHome Dashboard, click the ⋮(three vertical dots button), and click the Show API Key to copy the key.\nWe log on to Home Assistant and configure the ESPHome device as below:\nGo to Settings. Go to Devices and Services. The ESPHome devices should appear under Discovered, click the CONFIGURE button. Paste the ESPHome device’s API key into encryption key field and click SUBMIT button. Done. Result In the end, we should get the LD2410’s reading in the Home Assistant → Settings → Devices and Services → Devices tab(on top of the webpage) → Click the ESP8266 ESPHome device.\n",
+  "wordCount" : "975",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp","datePublished": "2024-01-29T00:00:00Z",
+  "dateModified": "2024-01-29T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Juan's Tech Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Juan&#39;s Tech Blog (Alt + H)">Juan&#39;s Tech Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant.
+    </h1>
+    <div class="post-description">
+      Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant.
+    </div>
+    <div class="post-meta"><span title='2024-01-29 00:00:00 +0000 UTC'>January 29, 2024</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;975 words
+&nbsp;|&nbsp;<span>Revised. Originally published at Juan&#39;s Tech Blog(Blogger/Blogspot)&nbsp;<a href="https://juanstechblog.blogspot.com/2023/12/build-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.html" title="https://juanstechblog.blogspot.com/2023/12/build-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.html" target="_blank" rel="noopener noreferrer">juanstechblog.blogspot.com</a>
+</span>
+</div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp" alt="DIY Human Presence Sensor with ESP8266, LD2410 and ESPHome.">
+        <p>DIY Human Presence Sensor with ESP8266, LD2410 and ESPHome.</p>
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#parts-required">Parts Required</a></li>
+    <li><a href="#flash-esphome-into-esp8266">Flash ESPHome into ESP8266</a></li>
+    <li><a href="#set-up-esphome-dashboard-using-docker-compose">Set up ESPHome Dashboard using Docker Compose</a></li>
+    <li><a href="#adopt-esp8266-in-esphome-dashboard">Adopt ESP8266 in ESPhome Dashboard</a></li>
+    <li><a href="#esp8266-ld2410-and-parts-assembly">ESP8266, LD2410 and Parts Assembly.</a></li>
+    <li><a href="#integrate-esphome-device-into-home-assistant">Integrate ESPHome Device into Home Assistant</a></li>
+    <li><a href="#result">Result</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>The photo above is my cheap human presence sensor with ESP8266 and LD2410C mmWave radar sensor. It costs about RM 27—ESP8266-RM 9.90 and LD2410C-RM 17.61.</p>
+<p>This is my first time using ESPHome and LD2410. The LD2410C mmWave radio sensor module comes with Bluetooth connectivity, and Home Assistant has an integration for this sensor module. We can power the LD2410C and directly integrate the sensor module into Home Assistant via Bluetooth.</p>
+<p>Somehow, the Bluetooth connection between the Home Assistant and LD2410C is unstable and breaks every few minutes. Therefore, I use an ESP8266 hook with LD2410C, run ESPHome, and integrate it into Home Assistant via Wi-Fi.</p>
+<p>Let&rsquo;s build it.</p>
+<h2 id="parts-required">Parts Required<a hidden class="anchor" aria-hidden="true" href="#parts-required">#</a></h2>
+<ul>
+<li>ESP8266 development board - Also, any ESP32 development.</li>
+<li>HLK-LD2410C mmWave Radar Sensor Module - Any LD2410 variant.</li>
+<li>A few jumper wires.</li>
+<li>USB Cable.</li>
+<li>Breadboard - if necessary.</li>
+<li>Power Adapter - if necessary.</li>
+</ul>
+<h2 id="flash-esphome-into-esp8266">Flash ESPHome into ESP8266<a hidden class="anchor" aria-hidden="true" href="#flash-esphome-into-esp8266">#</a></h2>
+<p>We will use the ESPHome&rsquo;s install ready-made project method to flash the firmware into our ESP8266 development board and adopt it in the ESPHome Dashboard. This method only works with Chrome and Microsoft Edge browsers. Also, it may need the development board&rsquo;s USB driver.</p>
+<ol>
+<li>Connect ESP8266 to the computer via a USB cable.</li>
+<li>Log on to <a href="https://esphome.io/projects/">ESPHome&rsquo;s web page</a>.</li>
+<li>Select <strong><em>Empty ESPHome device</em></strong> under the <strong><em>I want to create a:</em></strong> section, pick <strong><em>ESP32/ESP8266</em></strong> under <strong><em>the manufacturer of the device you want to set up</em></strong> section, and click <strong><em>CONNECT</em></strong> button.</li>
+<li>Select the corresponding USB serial port in the pop-out window.</li>
+<li>Click the <strong><em>INSTALL ESPHOME WEB</em></strong>.</li>
+<li>Configure the Wi-Fi.</li>
+</ol>
+<p>After, we can leave the ESP8266 alone, keep it powered, and upload a new configuration(yaml) through wireless in the ESPHome Dashboard later.</p>
+<h2 id="set-up-esphome-dashboard-using-docker-compose">Set up ESPHome Dashboard using Docker Compose<a hidden class="anchor" aria-hidden="true" href="#set-up-esphome-dashboard-using-docker-compose">#</a></h2>
+<p>Next, We run the ESPHome Dashboard in a Docker container using Docker Compose.</p>
+<p>We can create a new or modify existing docker-compose.yaml as below:</p>
+<blockquote>
+<p>The script below is from the official documentation.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">esphome</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">esphome</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ghcr.io/esphome/esphome</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/path/to/esphome/config:/config</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/etc/localtime:/etc/localtime:ro</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">privileged</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">network_mode</span>: <span style="color:#ae81ff">host</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">USERNAME=ChangeHere</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">PASSWORD=ChangeHere</span>
+</span></span></code></pre></div><blockquote>
+<p>Remember to change the <code>USERNAME</code> and <code>PASSWORD</code> variables in the <code>environment</code>.</p>
+</blockquote>
+<p>We can execute the command below to start the container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ docker compose up -d
+</span></span></code></pre></div><p>Once the ESPHome Dashboard is started, we can log on to the web page.</p>
+<pre tabindex="0"><code>http://&lt;your ip address&gt;:6052/
+</code></pre><h2 id="adopt-esp8266-in-esphome-dashboard">Adopt ESP8266 in ESPhome Dashboard<a hidden class="anchor" aria-hidden="true" href="#adopt-esp8266-in-esphome-dashboard">#</a></h2>
+<p>After logging in to the ESPHome Dashboard, the newly flashed firmware ESP8266 should appear in the dashboard. We click the <strong><em>ADOPT</em></strong> button to adopt the ESP8266. It will take a few minutes to complete.</p>
+<p>Later, click the <strong><em>EDIT</em></strong> button, modify the script as below, and save it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Append code below the captive_portal #</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">uart</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">id</span>: <span style="color:#ae81ff">uart_ld2410</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tx_pin</span>: <span style="color:#ae81ff">GPIO1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rx_pin</span>: <span style="color:#ae81ff">GPIO3</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">baud_rate</span>: <span style="color:#ae81ff">256000</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">parity</span>: <span style="color:#ae81ff">NONE</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">stop_bits</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">ld2410</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">uart_id</span>: <span style="color:#ae81ff">uart_ld2410</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">binary_sensor</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">ld2410</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">has_target</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Presence</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">has_moving_target</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Moving Target</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">has_still_target</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Still Target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">sensor</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">ld2410</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">light</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">light</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">moving_distance</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name </span>: <span style="color:#ae81ff">Moving Distance</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">still_distance</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Still Distance</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">moving_energy</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Move Energy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">still_energy</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Still Energy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">detection_distance</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Detection Distance</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g0</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g0 move energy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g0 still energy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g1</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g1 move energy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g1 still energy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g2</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g2 move energy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g2 still energy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g3</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g3 move energy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g3 still energy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g4</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g4 move energy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g4 still energy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g5</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g5 move energy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g5 still energy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g6</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g6 move energy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g6 still energy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g7</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g7 move energy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g7 still energy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g8</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g8 move energy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_energy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g8 still energy</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">switch</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">ld2410</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">engineering_mode</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;engineering mode&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">bluetooth</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;control bluetooth&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">number</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">ld2410</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">timeout</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">timeout</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">light_threshold</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">light threshold</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">max_move_distance_gate</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">max move distance gate</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">max_still_distance_gate</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">max still distance gate</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g0</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g0 move threshold</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g0 still threshold</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g1</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g1 move threshold</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g1 still threshold</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g2</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g2 move threshold</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g2 still threshold</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g3</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g3 move threshold</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g3 still threshold</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g4</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g4 move threshold</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g4 still threshold</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g5</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g5 move threshold</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g5 still threshold</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g6</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g6 move threshold</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g6 still threshold</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g7</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g7 move threshold</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g7 still threshold</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">g8</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">move_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g8 move threshold</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">still_threshold</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">g8 still threshold</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">button</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">ld2410</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">factory_reset</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;factory reset&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;restart&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">query_params</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">query params</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">text_sensor</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">ld2410</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">version</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;firmware version&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">mac_address</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;mac address&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">select</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">ld2410</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">distance_resolution</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;distance resolution&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">baud_rate</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;baud rate&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">light_function</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">light function</span>
+</span></span></code></pre></div><p>Then, we click the <strong><em>VALIDATE</em></strong> button in the <strong>⋮</strong>(three vertical dots button) to ensure the script is valid.</p>
+<p>Hit the <strong><em>INSTALL</em></strong> button in n the <strong>⋮</strong>(three vertical dots button) to upload the new configuration into ESP8266.</p>
+<h2 id="esp8266-ld2410-and-parts-assembly">ESP8266, LD2410 and Parts Assembly.<a hidden class="anchor" aria-hidden="true" href="#esp8266-ld2410-and-parts-assembly">#</a></h2>
+<p>Now, we can unplug the USB cable and wire up the LD2410C sensor module with ESP8266.</p>
+<p><img loading="lazy" src="diy-human-presence-sensor-esp8266-ld2410-schematic-diagram.webp" alt="DIY Human Presence Sensor with ESP8266 and LD2410 Schematic Diagram"  />
+</p>
+<p>Wire the ESP8266 and LD2410 as below:</p>
+<table>
+<thead>
+<tr>
+<th>ESP8266</th>
+<th>LD2410</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RX(GPIO3)</td>
+<td>TX</td>
+</tr>
+<tr>
+<td>TX(GPIO1)</td>
+<td>RX</td>
+</tr>
+<tr>
+<td>VIN</td>
+<td>VCC</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>GND</td>
+</tr>
+</tbody>
+</table>
+<h2 id="integrate-esphome-device-into-home-assistant">Integrate ESPHome Device into Home Assistant<a hidden class="anchor" aria-hidden="true" href="#integrate-esphome-device-into-home-assistant">#</a></h2>
+<p>The last step is to integrate the ESPHome device into Home Assistant.</p>
+<p>Get the ESPHome device&rsquo;s API key in the ESPHome Dashboard, click the <strong>⋮</strong>(three vertical dots button), and click the <strong><em>Show API Key</em></strong> to copy the key.</p>
+<p>We log on to Home Assistant and configure the ESPHome device as below:</p>
+<ol>
+<li>Go to <strong><em>Settings</em></strong>.</li>
+<li>Go to <strong><em>Devices and Services</em></strong>.</li>
+<li>The ESPHome devices should appear under <strong><em>Discovered</em></strong>, click the <strong><em>CONFIGURE</em></strong> button.</li>
+<li>Paste the ESPHome device&rsquo;s API key into encryption key field and click <strong><em>SUBMIT</em></strong> button.</li>
+<li>Done.</li>
+</ol>
+<h2 id="result">Result<a hidden class="anchor" aria-hidden="true" href="#result">#</a></h2>
+<p><img loading="lazy" src="ld2410-reading-in-home-assistant.webp" alt="LD2410 Human Presence Sensor status in Home Assistant"  />
+</p>
+<p>In the end, we should get the LD2410&rsquo;s reading in the Home Assistant → Settings → Devices and Services → Devices tab(on top of the webpage) → Click the ESP8266 ESPHome device.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/home-automation/">Home Automation</a></li>
+      <li><a href="http://localhost:1313/tags/smart-home/">Smart Home</a></li>
+      <li><a href="http://localhost:1313/tags/esphome/">ESPHome</a></li>
+      <li><a href="http://localhost:1313/tags/home-assistant/">Home Assistant</a></li>
+      <li><a href="http://localhost:1313/tags/esp8266/">ESP8266</a></li>
+      <li><a href="http://localhost:1313/tags/ld2410/">LD2410</a></li>
+      <li><a href="http://localhost:1313/tags/human-presence-sensor/">Human Presence Sensor</a></li>
+      <li><a href="http://localhost:1313/tags/diy/">DIY</a></li>
+      <li><a href="http://localhost:1313/tags/youtube/">YouTube</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/install-hugo-windows-11/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>How to install Hugo on Windows 11.</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/integrate-sonoff-zigbee-dongle-plus-p-into-home-assistant/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Integrate SONOFF Zigbee USB Dongle 3.0 Plus-P into Home Assistant.</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant. on x"
+            href="https://x.com/intent/tweet/?text=Build%20Human%20Presence%20Sensor%20with%20ESP8266%2c%20LD2410%20and%20ESPHome%2c%20Integrate%20into%20Home%20Assistant.&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdiy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant%2f&amp;hashtags=HomeAutomation%2cSmartHome%2cESPHome%2cHomeAssistant%2cESP8266%2cLD2410%2cHumanPresenceSensor%2cDIY%2cYouTube">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant. on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdiy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant%2f&amp;title=Build%20Human%20Presence%20Sensor%20with%20ESP8266%2c%20LD2410%20and%20ESPHome%2c%20Integrate%20into%20Home%20Assistant.&amp;summary=Build%20Human%20Presence%20Sensor%20with%20ESP8266%2c%20LD2410%20and%20ESPHome%2c%20Integrate%20into%20Home%20Assistant.&amp;source=http%3a%2f%2flocalhost%3a1313%2fposts%2fdiy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant. on reddit"
+            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdiy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant%2f&title=Build%20Human%20Presence%20Sensor%20with%20ESP8266%2c%20LD2410%20and%20ESPHome%2c%20Integrate%20into%20Home%20Assistant.">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant. on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fdiy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant. on whatsapp"
+            href="https://api.whatsapp.com/send?text=Build%20Human%20Presence%20Sensor%20with%20ESP8266%2c%20LD2410%20and%20ESPHome%2c%20Integrate%20into%20Home%20Assistant.%20-%20http%3a%2f%2flocalhost%3a1313%2fposts%2fdiy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant. on telegram"
+            href="https://telegram.me/share/url?text=Build%20Human%20Presence%20Sensor%20with%20ESP8266%2c%20LD2410%20and%20ESPHome%2c%20Integrate%20into%20Home%20Assistant.&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdiy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant. on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=Build%20Human%20Presence%20Sensor%20with%20ESP8266%2c%20LD2410%20and%20ESPHome%2c%20Integrate%20into%20Home%20Assistant.&u=http%3a%2f%2flocalhost%3a1313%2fposts%2fdiy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer><script src="https://giscus.app/client.js"
+        data-repo="JuanTechBlog/juantechblog.github.io"
+        data-repo-id="R_kgDOLHpjjw"
+        data-category="General"
+        data-category-id="DIC_kwDOLHpjj84Ccp5u"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">Juan&#39;s Tech Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

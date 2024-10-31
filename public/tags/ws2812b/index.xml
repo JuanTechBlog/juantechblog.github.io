@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WS2812B on Juan&#39;s Tech Blog</title>
+    <link>http://localhost:1313/tags/ws2812b/</link>
+    <description>Recent content in WS2812B on Juan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ws2812b/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DIY WS2812B Addressable LED Light Strip Controller with ESP32 and WLED.</title>
+      <link>http://localhost:1313/posts/diy-ws2812b-led-light-strip-controller-esp32-wled/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/diy-ws2812b-led-light-strip-controller-esp32-wled/</guid>
+      <description>Guide to Build a WS2812B Addressable LED Light Strip Controller with ESP32 and WLED.</description>
+    </item>
+  </channel>
+</rss>

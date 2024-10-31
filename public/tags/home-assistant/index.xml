@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home Assistant on Juan&#39;s Tech Blog</title>
+    <link>http://localhost:1313/tags/home-assistant/</link>
+    <description>Recent content in Home Assistant on Juan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/home-assistant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Access Home Assistant Remotely.</title>
+      <link>http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</guid>
+      <description>Step-by-step guides to get a .PP.UA domain, set up Cloudfalre as your nameserver, configure Cloudflare Tunnel, install Cloudflare Tunnel docker client and configure Home Assistant.</description>
+    </item>
+    <item>
+      <title>Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant.</title>
+      <link>http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/</guid>
+      <description>Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant.</description>
+    </item>
+    <item>
+      <title>Integrate SONOFF Zigbee USB Dongle 3.0 Plus-P into Home Assistant.</title>
+      <link>http://localhost:1313/posts/integrate-sonoff-zigbee-dongle-plus-p-into-home-assistant/</link>
+      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/integrate-sonoff-zigbee-dongle-plus-p-into-home-assistant/</guid>
+      <description>I just learned how to mount the Zigbee dongle into Docker container and integrate it into Home Assistant.</description>
+    </item>
+    <item>
+      <title>DIY a Floating Wall Mounted TV Console Part 1: Preparation</title>
+      <link>http://localhost:1313/posts/diy-floating-tv-cabinet-part-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/diy-floating-tv-cabinet-part-1/</guid>
+      <description>Before building a floating TV cabinet, </description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LLM on Juan&#39;s Tech Blog</title>
+    <link>http://localhost:1313/tags/llm/</link>
+    <description>Recent content in LLM on Juan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running LLM and Stable Diffusion Locally on My Low-End Hardware</title>
+      <link>http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/</guid>
+      <description>Let&amp;rsquo;s start with my PC spec.
+Components Parts Processor Intel i5 10400ES iGPU Intel UHD Graphics 630 Motherboard AsRock B460M Pro RAM Adata DDR4-2666 4GB x2 dGPU N/A When it comes to AI, most people probably think it requires a beefy GPU to run smoothly and quickly. And that&amp;rsquo;s true. But just how bad will it be when running AI on a low-end GPU?
+How to run LLM and Stable Diffusion on Intel UHD 630 iGPU?</description>
+    </item>
+  </channel>
+</rss>
