@@ -1,6 +1,7 @@
 ---
 title: "Running LLM and Stable Diffusion Locally on My Low-End Hardware"
 description: "Try running Llama 3.2 1B Q8, Llama 3.2 3B Q8 & Stable Diffusion 1.5 on Intel UHD Graphics 630. Also, try to run AI models on the CPU."
+summary: "Try running Llama 3.2 1B Q8, Llama 3.2 3B Q8 & Stable Diffusion 1.5 on Intel UHD Graphics 630. Also, try to run AI models on the CPU."
 date: "2024-10-28"
 tags: ["AI", "LLM", "Stable Diffusion 1.5", "Llama 3.2 1B Q8", Llama 3.2 3B Q8, "Jan AI", "stable-diffusion.cpp", "Vulkan", "AVX2"]
 draft: false
@@ -32,6 +33,8 @@ Intel has a Pytouch library called `IPEX-LLM` for running LLM on Intel CPU and G
 However, it doesn’t seem to support my iGPU. 
 
 The IPEX-LLM requires a graphic driver version of `31.0.101.5122` and higher, which is only compatible with Intel Core 11 gen and newer iGPUs, as well as Intel Arc GPUs. For the Intel UHD 630, the latest driver available is `31.0.101.2130`—below the required level. 
+
+So, I’m looking for alternative options. I think Vulkan might be the only way to get LLM and Stable Diffusion running on my GPU.
 
 ## LLM Test Run (Llama 3.2 1B Instruct Q8 Llama 3.2 3B Instruct Q8)
 
