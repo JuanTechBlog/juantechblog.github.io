@@ -3,7 +3,7 @@ title: "How to Access Home Assistant Remotely."
 description: "Step-by-step guides to get a .PP.UA domain, set up Cloudfalre as your nameserver, configure Cloudflare Tunnel, install Cloudflare Tunnel docker client and configure Home Assistant."
 date: "2024-08-24"
 tags: ["Home Assistant", "Cloudflare", ".PP.UA domain", "Docker", "Docker Compose"]
-draft: false
+draft: true
 ShowToc: true
 cover:
     image: 
