@@ -2,9 +2,12 @@
 title: "Create a Telegram Bot using JavaScript, Cloudflare Workers and Cloudflare Workers KV."
 description: "Step-by-step guide to set up Telegram bot with Botfather, serverless service Cloudflare Workers, data storage Cloudflare Workers KV and coding using JavaScript."
 date: "2024-12-10"
-tags: ["cloudflare workers", "cloudflare workers kv", "telegram bot", "serverless", "javascript", "cloud data storage", "javascript"]
+tags: ["cloudflare workers", "cloudflare workers kv", "telegram bot", "serverless", "javascript", "cloud data storage"]
 draft: false
 ShowToc: true
+canonicalURL: "https://juanstechblog.blogspot.com/2025/01/create-telegram-bot-using-javascript-cloudflare-workers-cloudflare-workers-kv.html"
+ShowCanonicalLink: true
+CanonicalLinkText: "Revised. Originally published at Juan's Tech Blog(Blogger/Blogspot)"
 cover:
     image: imgs/create-telegram-bot-using-javascript-cloudflare-workers-and-cloudflare-workers-kv.webp
     alt: "Create Telegram Bot using JavaScript, Cloudflare Workers and Cloudflare Workers KV."
@@ -82,6 +85,7 @@ To use Cloudflare KV in the worker, we need to bind the services together first.
 1. Click the **down arrow** next to **Workers & Pages** at the left and select **Overview**.
 2. Click the **name of the worker**(e.g., gx-bot-worker, from the previous example) we just created earlier.
 3. Go to the **Settings** tab.
+
 ### Binding Cloudflare KV
 1. Under **Bindings**, click the **+ Add**. 
 2. Click **KV namespace**(e.g., kv-gifs, from the previous example).
@@ -225,9 +229,9 @@ async function onUpdate (update) {
 The `onMessage` function will perform several checks:
 1. Check whether the `entities` object exists in the message. 
 2. Check whether one of the `entities`'s types is  `BOT_COM`.
-3. Find the `mentionedUser` in the `entities`through the `entities`'s type of `MENTION` or `TXT_MENTION`.
+3. Find the `mentionedUser` in the `entities` through the `entities`'s type of `MENTION` or `TXT_MENTION`.
 4. Check whether the command is valid. 
-If all the checks pass, extract the username, substitute it into a template string, and pass it to the  `sendAnimationAndText` function. 
+If all the checks pass, extract the username, substitute it into a template string, and pass it to the `sendAnimationAndText` function. 
 ```js
 /**
  * Handle incoming Message
