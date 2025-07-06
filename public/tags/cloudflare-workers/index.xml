@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloudflare Workers on Juan&#39;s Tech Blog</title>
+    <link>http://localhost:1313/tags/cloudflare-workers/</link>
+    <description>Recent content in Cloudflare Workers on Juan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cloudflare-workers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create a Telegram Bot using JavaScript, Cloudflare Workers and KV.</title>
+      <link>http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/</guid>
+      <description>Step-by-step guide to set up Telegram bot with Botfather, serverless service Cloudflare Workers, data storage Cloudflare Workers KV and coding using JavaScript.</description>
+    </item>
+  </channel>
+</rss>

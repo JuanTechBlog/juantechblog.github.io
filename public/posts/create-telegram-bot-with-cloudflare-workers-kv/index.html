@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Create a Telegram Bot using JavaScript, Cloudflare Workers and KV. | Juan&#39;s Tech Blog</title>
+<meta name="keywords" content="cloudflare workers, cloudflare workers kv, telegram bot, serverless, javascript, cloud data storage, javascript">
+<meta name="description" content="Step-by-step guide to set up Telegram bot with Botfather, serverless service Cloudflare Workers, data storage Cloudflare Workers KV and coding using JavaScript.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/">
+<meta name="google-site-verification" content="8tuuNRZtCnIRwkCljQTqQ_4KvsAJ-_jqNhFgewUSIFU">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.4599eadb9eb2ad3d0a8d6827b41a8fda8f2f4af226b63466c09c5fddbc8706b7.css" integrity="sha256-RZnq256yrT0KjWgntBqP2o8vSvImtjRmwJxf3byHBrc=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634877819425351"
+     crossorigin="anonymous"></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPQZ6L0MQS"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-VPQZ6L0MQS');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="Create a Telegram Bot using JavaScript, Cloudflare Workers and KV." />
+<meta property="og:description" content="Step-by-step guide to set up Telegram bot with Botfather, serverless service Cloudflare Workers, data storage Cloudflare Workers KV and coding using JavaScript." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/" />
+<meta property="og:image" content="http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/imgs/create-telegram-bot-using-javascript-cloudflare-workers-and-cloudflare-workers-kv.webp" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-12-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-12-10T00:00:00+00:00" /><meta property="og:site_name" content="Juan&#39;s Tech Blog" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/imgs/create-telegram-bot-using-javascript-cloudflare-workers-and-cloudflare-workers-kv.webp" />
+<meta name="twitter:title" content="Create a Telegram Bot using JavaScript, Cloudflare Workers and KV."/>
+<meta name="twitter:description" content="Step-by-step guide to set up Telegram bot with Botfather, serverless service Cloudflare Workers, data storage Cloudflare Workers KV and coding using JavaScript."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Create a Telegram Bot using JavaScript, Cloudflare Workers and KV.",
+      "item": "http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Create a Telegram Bot using JavaScript, Cloudflare Workers and KV.",
+  "name": "Create a Telegram Bot using JavaScript, Cloudflare Workers and KV.",
+  "description": "Step-by-step guide to set up Telegram bot with Botfather, serverless service Cloudflare Workers, data storage Cloudflare Workers KV and coding using JavaScript.",
+  "keywords": [
+    "cloudflare workers", "cloudflare workers kv", "telegram bot", "serverless", "javascript", "cloud data storage", "javascript"
+  ],
+  "articleBody": "I want to create a bot that can congratulate other Telegram group members when they make a profit from crypto investments (Please do your own research before making any investments).\nI keep the Telegram bot’s function simple. Group members can instruct the bot using command( /gx ) and mention( @ ) a user. The bot will then reply a prefixed congratulatory message and attach with a random GIF.\nHow to Create a Telegram Bot? I don’t really know.\nI once create a Telegram bot for a school coursework. I wrote the backend program in python and ran it on my laptop.\nNow, the Telegram group members are from different countries and time zones, so the bot should be available for 24/7. I don’t want to keep my computer running all the time, so I’m considering different approach. “Serverless” came to my mind—it allows the Telegram bot code to run on the cloud 24/7 and on demand.\nMy plan is straightforward. I will use JavaScript to write the code, Cloudflare Workers (a serverless service) to run the code, and Cloudflare Workers KV(a cloud data storage) to store some GIF URLs.\nLet’s begin.\nPrerequisite A Telegram account. A Cloudflare account. Create a Telegram Bot. To create a Telegram bot, we need to talk to the BotFather.\nGo to BotFather , type /newbot, or click Menu and select /newbot. Enter your bot’s name(e.g., GX Bot). Enter your bot’s username(e.g., gx-box). BotFather will then provide you with an HTTP API token. The HTTP API token is important and will be used to control the bot we just created.\nSetup Telegram Bot Command and Group Privacy. Next, we pre-define a command in our Telegram bot to make it easier for users.\nType /mybot and select our bot(e.g., gx-bot). Choose Edit Bot and then Edit Commands. Enter the command following the format provided by BotFather’s prompt. (e.g., gx - 加 @ 用户 Bot 就会帮你恭喜群友). Also, disable the Telegram bot’s group privacy settings to allow all message flows to the bot backend without requiring group admin right.\nType /mybot and select our bot (e.g., gx-bot). Select Bot Settings and Group Privacy. Click Turn off. Create a Cloudflare Workers. Log in to Cloudflare. Go to Workers \u0026 Pages in the left side menu and click the Overview. Click the Create, then select Create Worker under the Workers tab. Enter a name(e.g., gx-bot-worker) for the worker and click Deploy. Once it’s done, click the Continue to Project button. The worker is now ready to serve. It’s just waiting for us to provide the code to run. We will click the Edit Code button later to paste the code. Before that, we will need to set up Cloudflare Workers KV to store our GIF URLs.\nCreate and Set Up Cloudflare Workers KV. We will use Cloudflare Workers KV to store the GIF URLs, which will be included in the Telegram bot response.\nClick the down arrow next to Workers \u0026 Pages on the left, and then click the KV. Click Create a Namespace, enter a Namespace Name(e.g., kv-gifs), and click Add. Afterward, the new Namespace will be added to the table blow. Click View in the row of the Namespace we just created. Go to the KV Pairs tab, and enter the key and value as shown in the table below. Key Value gifs [\"https://media1.tenor.com/m/-ZQ-I0N9dRwAAAAC/dog-cute-dog.gif\",\"https://media.tenor.com/WIMffkKhJC0AAAAi/pig-dog.gif\"] You can always replace the values with your own GIF URLs.\nCloudflare KV stores data in key-value pairs. Our value will be the URLs in JSON array format, and we will use gifts as the key to retrieve it.\nClick Add entry to save. Binding Cloudflare Workers KV and Variables/Secrets in Cloudflare Workers. To use Cloudflare KV in the worker, we need to bind the services together first. Additionally, we will bind our HTTP API token and two secret variables.\nClick the down arrow next to Workers \u0026 Pages at the left and select Overview. Click the name of the worker(e.g., gx-bot-worker, from the previous example) we just created earlier. Go to the Settings tab. Binding Cloudflare KV Under Bindings, click the + Add. Click KV namespace(e.g., kv-gifs, from the previous example). Enter a Variable name(e.g., GIFS), choose the KV namespace we just created, and click Deploy. Add Variables and Secrets We will create two variables according to the table below:\nVariable Name Value ENV_BOT_TOKEN \u003cHTTP API token from BotFather\u003e ENV_BOT_SECRET \u003cA Random combination of A-Z, a-z, 0-9, _ and -\u003e ENV_BOT_TOKEN will store our HTTP API token. For ENV_BOT_SECRET, we need to create a value as a secret key to verify each Telegram updates.\nUnder Variables and Secrets, click +Add. The Type can remain as text or be changed to secret to encrypt the text. Enter the Variable Name and Value according to the table above. Click Deploy. Coding I will fork the code from telegram-bot-cloudflare by cvzi and then make some modifications to fit our case.\nFirst, we will declare some variables and constants.\nlet TOKEN; // Get it from @BotFather https://core.telegram.org/bots#6-botfather let SECRET; // A-Z, a-z, 0-9, _ and - let ENV_VAL; // Enviroment const WEBHOOK = '/endpoint'; const BOT_COM = 'bot_command'; const GX_COM = '/gx'; const MENTION = 'mention'; const TXT_MENTION = 'text_mention'; We will create an entry point for the worker to receive and process requests from the Telegram bot API.\nexport default { async fetch(request, env) { ENV_VAL = env; TOKEN = env.ENV_BOT_TOKEN; SECRET = env.ENV_BOT_SECRET; return await route(request); }, }; The Workers runtime will inject the KV bindings, variables and secrets in the env. We assign them to our variables accordingly and pass the request to the route function.\nThe route function will direct the request to be processed with handleWebhook or set up our worker using the registerWebhook and unRegisterWebhook functions.\n/** * Wait for requests to the worker */ async function route (request) { const url = new URL(request.url) if (url.pathname === WEBHOOK) { return await handleWebhook(request); } else if (url.pathname === '/registerWebhook') { return await registerWebhook(request, url, WEBHOOK, SECRET); } else if (url.pathname === '/unRegisterWebhook') { return await unRegisterWebhook(request); } else { return await new Response('No handler for this request'); } } The registerWebhook function will notify our endpoint URL and ENV_BOT_SECRET to the Telegram Bot API for receiving new updates. Obviously, the unRegisterWebhook function undoes this.\n/** * Set webhook to this worker's url * https://core.telegram.org/bots/api#setwebhook */ async function registerWebhook (request, requestUrl, suffix, secret) { // https://core.telegram.org/bots/api#setwebhook const webhookUrl = `${requestUrl.protocol}//${requestUrl.hostname}${suffix}` const r = await (await fetch(apiUrl('setWebhook', { url: webhookUrl, secret_token: secret }))).json() return new Response('ok' in r \u0026\u0026 r.ok ? 'Ok' : JSON.stringify(r, null, 2)) } /** * Remove webhook * https://core.telegram.org/bots/api#setwebhook */ async function unRegisterWebhook (request) { const r = await (await fetch(apiUrl('setWebhook', { url: '' }))).json() return new Response('ok' in r \u0026\u0026 r.ok ? 'Ok' : JSON.stringify(r, null, 2)) } The handleWebhook function will check the incoming request’s secret token from Telegram Bot API against our ENV_BOT_SECRET. After that, it will convert request to JSON format and forward it to onUpdate function.\n/** * Handle requests to WEBHOOK * https://core.telegram.org/bots/api#update */ async function handleWebhook (request) { // Check secret if (request.headers.get('X-Telegram-Bot-Api-Secret-Token') !== SECRET) { return new Response('Unauthorized', { status: 403 }) } // Read request body synchronously const update = await request.json() // Deal with response asynchronously await onUpdate(update); return new Response('Ok') } The onUpdate function checks whether the message object exists in the update. if it does, the function forwards the message to onMessage.\n/** * Handle incoming Update * https://core.telegram.org/bots/api#update */ async function onUpdate (update) { if ('message' in update) { await onMessage(update.message) } } The onMessage function will perform several checks:\nCheck whether the entities object exists in the message. Check whether one of the entities’s types is BOT_COM. Find the mentionedUser in the entitiesthrough the entities’s type of MENTION or TXT_MENTION. Check whether the command is valid. If all the checks pass, extract the username, substitute it into a template string, and pass it to the sendAnimationAndText function. /** * Handle incoming Message * https://core.telegram.org/bots/api#message */ function onMessage (message) { if (!('entities' in message)) { return; } let validComm = false; let hasBotComm = message.entities.some(entity =\u003e entity.type === BOT_COM); let mentionedUser = message.entities.find(entity =\u003e entity.type === MENTION || entity.type === TXT_MENTION); if (hasBotComm) { validComm = message.text.startsWith(GX_COM) } if (hasBotComm \u0026\u0026 validComm \u0026\u0026 mentionedUser) { let text = message.text; let mentionedUsername = text.slice(mentionedUser.offset, mentionedUser.offset + mentionedUser.length); let response = `恭喜群友 ${mentionedUsername} 赚钱`; return sendAnimationAndText(message.chat.id, response); } return; } The sendAnimationAndText function will retrieve the list of gifs from KV and randomly pick a URL from it. Afterwards, it will pass all the parameters to apiUrl to form a query string and send it as a response to the Telegram Bot API.\n/** * Send plain text message * https://core.telegram.org/bots/api#sendmessage */ async function sendAnimationAndText (chatId, text) { let gifs = JSON.parse(await ENV_VAL.GIFS.get(\"gifs\")); let randomGif = gifs[Math.floor(Math.random() * gifs.length)]; return (await fetch(apiUrl('sendAnimation', { chat_id: chatId, animation: randomGif, caption: text }))).json() } The apiUrl is a utility function that converts the passed-in parameters to query strings.\n/** * Return url to telegram api, optionally with parameters added */ function apiUrl (methodName, params = null) { let query = '' if (params) { query = '?' + new URLSearchParams(params).toString() } return `https://api.telegram.org/bot${TOKEN}/${methodName}${query}` } Full code /** * Original source code: https://github.com/cvzi/telegram-bot-cloudflare * with some modification by YJCHOO */ let TOKEN; // Get it from @BotFather https://core.telegram.org/bots#6-botfather let SECRET; // A-Z, a-z, 0-9, _ and - let ENV_VAL; const WEBHOOK = '/endpoint'; const BOT_COM = 'bot_command'; const GX_COM = '/gx'; const MENTION = 'mention'; const TXT_MENTION = 'text_mention'; export default { async fetch(request, env) { ENV_VAL = env; TOKEN = env.ENV_BOT_TOKEN; SECRET = env.ENV_BOT_SECRET; return await route(request); }, }; /** * Wait for requests to the worker */ async function route (request) { const url = new URL(request.url); if (url.pathname === WEBHOOK) { return await handleWebhook(request); } else if (url.pathname === '/registerWebhook') { return await registerWebhook(request, url, WEBHOOK, SECRET); } else if (url.pathname === '/unRegisterWebhook') { return await unRegisterWebhook(request); } else { return await new Response('No handler for this request'); } } /** * Handle requests to WEBHOOK * https://core.telegram.org/bots/api#update */ async function handleWebhook (request) { // Check secret if (request.headers.get('X-Telegram-Bot-Api-Secret-Token') !== SECRET) { return new Response('Unauthorized', { status: 403 }); } // Read request body synchronously const update = await request.json(); // Deal with response asynchronously await onUpdate(update); return new Response('Ok'); } /** * Handle incoming Update * https://core.telegram.org/bots/api#update */ async function onUpdate (update) { if ('message' in update) { await onMessage(update.message); } } /** * Handle incoming Message * https://core.telegram.org/bots/api#message */ function onMessage (message) { if (!('entities' in message)) { return; } let validComm = false; let hasBotComm = message.entities.some(entity =\u003e entity.type === BOT_COM); let mentionedUser = message.entities.find(entity =\u003e entity.type === MENTION || entity.type === TXT_MENTION); if (hasBotComm) { validComm = message.text.startsWith(GX_COM); } if (hasBotComm \u0026\u0026 validComm \u0026\u0026 mentionedUser) { let text = message.text; let mentionedUsername = text.slice(mentionedUser.offset, mentionedUser.offset + mentionedUser.length); let response = `恭喜群友 ${mentionedUsername} 赚钱`; return sendAnimationAndText(message.chat.id, response); } return; } /** * Send plain text message * https://core.telegram.org/bots/api#sendmessage */ async function sendAnimationAndText (chatId, text) { let gifs = JSON.parse(await ENV_VAL.GIFS.get(\"gifs\")); let randomGif = gifs[Math.floor(Math.random() * gifs.length)]; return (await fetch(apiUrl('sendAnimation', { chat_id: chatId, animation: randomGif, caption: text }))).json() } /** * Set webhook to this worker's url * https://core.telegram.org/bots/api#setwebhook */ async function registerWebhook (request, requestUrl, suffix, secret) { // https://core.telegram.org/bots/api#setwebhook const webhookUrl = `${requestUrl.protocol}//${requestUrl.hostname}${suffix}`; const r = await (await fetch(apiUrl('setWebhook', { url: webhookUrl, secret_token: secret }))).json(); return new Response('ok' in r \u0026\u0026 r.ok ? 'Ok' : JSON.stringify(r, null, 2)); } /** * Remove webhook * https://core.telegram.org/bots/api#setwebhook */ async function unRegisterWebhook (request) { const r = await (await fetch(apiUrl('setWebhook', { url: '' }))).json(); return new Response('ok' in r \u0026\u0026 r.ok ? 'Ok' : JSON.stringify(r, null, 2)); } /** * Return url to telegram api, optionally with parameters added */ function apiUrl (methodName, params = null) { let query = ''; if (params) { query = '?' + new URLSearchParams(params).toString(); } return `https://api.telegram.org/bot${TOKEN}/${methodName}${query}`; } Testing Now, it’s time to test the bot.\nSearch our bot, click start and type command.\nAdd the bot to our group chat and test it.\n",
+  "wordCount" : "2010",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/imgs/create-telegram-bot-using-javascript-cloudflare-workers-and-cloudflare-workers-kv.webp","datePublished": "2024-12-10T00:00:00Z",
+  "dateModified": "2024-12-10T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Juan's Tech Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Juan&#39;s Tech Blog (Alt + H)">Juan&#39;s Tech Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Create a Telegram Bot using JavaScript, Cloudflare Workers and KV.
+    </h1>
+    <div class="post-description">
+      Step-by-step guide to set up Telegram bot with Botfather, serverless service Cloudflare Workers, data storage Cloudflare Workers KV and coding using JavaScript.
+    </div>
+    <div class="post-meta"><span title='2024-12-10 00:00:00 +0000 UTC'>December 10, 2024</span>&nbsp;·&nbsp;10 min&nbsp;·&nbsp;2010 words
+
+</div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/imgs/create-telegram-bot-using-javascript-cloudflare-workers-and-cloudflare-workers-kv.webp" alt="Create Telegram Bot using JavaScript, Cloudflare Workers and Cloudflare Workers KV.">
+        <p>Create Telegram Bot using JavaScript, Cloudflare Workers and Cloudflare Workers KV.</p>
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-create-a-telegram-bot">How to Create a Telegram Bot?</a></li>
+    <li><a href="#prerequisite">Prerequisite</a></li>
+    <li><a href="#create-a-telegram-bot">Create a Telegram Bot.</a></li>
+    <li><a href="#setup-telegram-bot-command-and-group-privacy">Setup Telegram Bot Command and Group Privacy.</a></li>
+    <li><a href="#create-a-cloudflare-workers">Create a Cloudflare Workers.</a></li>
+    <li><a href="#create-and-set-up-cloudflare-workers-kv">Create and Set Up Cloudflare Workers KV.</a></li>
+    <li><a href="#binding-cloudflare-workers-kv-and-variablessecrets-in-cloudflare-workers">Binding Cloudflare Workers KV and Variables/Secrets in Cloudflare Workers.</a>
+      <ul>
+        <li><a href="#binding-cloudflare-kv">Binding Cloudflare KV</a></li>
+        <li><a href="#add-variables-and-secrets">Add Variables and Secrets</a></li>
+      </ul>
+    </li>
+    <li><a href="#coding">Coding</a>
+      <ul>
+        <li><a href="#full-code">Full code</a></li>
+      </ul>
+    </li>
+    <li><a href="#testing">Testing</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>I want to create a bot that can congratulate other Telegram group members when they make a profit from crypto investments <strong>(Please do your own research before making any investments)</strong>.</p>
+<p>I keep the Telegram bot&rsquo;s function simple. Group members can instruct the bot using command( <strong>/gx</strong> ) and mention( <strong>@</strong> ) a user. The bot will then reply a prefixed congratulatory message and attach with a random GIF.</p>
+<h2 id="how-to-create-a-telegram-bot">How to Create a Telegram Bot?<a hidden class="anchor" aria-hidden="true" href="#how-to-create-a-telegram-bot">#</a></h2>
+<blockquote>
+<p>I don&rsquo;t really know.</p>
+</blockquote>
+<p>I once create a Telegram bot for a school coursework. I wrote the backend program in python and ran it on my laptop.</p>
+<p>Now, the Telegram group members are from different countries and time zones, so the bot should be available for 24/7. I don&rsquo;t want to keep my computer running all the time, so I&rsquo;m considering different approach. &ldquo;Serverless&rdquo; came to my mind—it allows the Telegram bot code to run on the cloud 24/7 and on demand.</p>
+<p>My plan is straightforward. I will use JavaScript to write the code, Cloudflare Workers (a serverless service) to run the code, and Cloudflare Workers KV(a cloud data storage) to store some GIF URLs.</p>
+<p>Let&rsquo;s begin.</p>
+<h2 id="prerequisite">Prerequisite<a hidden class="anchor" aria-hidden="true" href="#prerequisite">#</a></h2>
+<ul>
+<li>A Telegram account.</li>
+<li>A Cloudflare account.</li>
+</ul>
+<h2 id="create-a-telegram-bot">Create a Telegram Bot.<a hidden class="anchor" aria-hidden="true" href="#create-a-telegram-bot">#</a></h2>
+<p>To create a Telegram bot, we need to talk to the BotFather.</p>
+<ol>
+<li>Go to <a href="https://t.me/BotFather"><strong>BotFather</strong></a> , type <strong><code>/newbot</code></strong>, or click Menu and select <strong><code>/newbot</code></strong>.</li>
+<li>Enter your bot&rsquo;s <strong>name</strong>(e.g., GX Bot).</li>
+<li>Enter your bot&rsquo;s <strong>username</strong>(e.g., gx-box).</li>
+<li>BotFather will then provide you with an <strong>HTTP API token</strong>.</li>
+</ol>
+<p>The <strong>HTTP API token</strong> is important and will be used to control the bot we just created.</p>
+<h2 id="setup-telegram-bot-command-and-group-privacy">Setup Telegram Bot Command and Group Privacy.<a hidden class="anchor" aria-hidden="true" href="#setup-telegram-bot-command-and-group-privacy">#</a></h2>
+<p>Next, we pre-define a command in our Telegram bot to make it easier for users.</p>
+<ol>
+<li>Type <code>/mybot</code> and select <code>our bot</code>(e.g., gx-bot).</li>
+<li>Choose <code>Edit Bot</code> and then <code>Edit Commands</code>.</li>
+<li>Enter the command following the format provided by BotFather&rsquo;s prompt. (e.g., gx - 加 @ 用户 Bot 就会帮你恭喜群友).</li>
+</ol>
+<p>Also, disable the Telegram bot&rsquo;s group privacy settings to allow all message flows to the bot backend without requiring group admin right.</p>
+<ol>
+<li>Type <code>/mybot</code> and select <code>our bot</code> (e.g., gx-bot).</li>
+<li>Select <code>Bot Settings</code> and <code>Group Privacy</code>.</li>
+<li>Click <code>Turn off</code>.</li>
+</ol>
+<h2 id="create-a-cloudflare-workers">Create a Cloudflare Workers.<a hidden class="anchor" aria-hidden="true" href="#create-a-cloudflare-workers">#</a></h2>
+<ol>
+<li>Log in to <a href="https://dash.cloudflare.com/login"><strong>Cloudflare</strong></a>.</li>
+<li>Go to <strong>Workers &amp; Pages</strong> in the left side menu and click the <strong>Overview</strong>.</li>
+<li>Click the <strong>Create</strong>, then select <strong>Create Worker</strong> under the <strong>Workers</strong> tab.</li>
+<li>Enter a <strong>name</strong>(e.g., gx-bot-worker) for the worker and click <strong>Deploy</strong>.</li>
+<li>Once it&rsquo;s done, click the <strong>Continue to Project</strong> button.</li>
+</ol>
+<p>The worker is now ready to serve. It&rsquo;s just waiting for us to provide the code to run. We will click the <strong>Edit Code</strong> button later to paste the code. Before that, we will need to set up Cloudflare Workers KV to store our GIF URLs.</p>
+<h2 id="create-and-set-up-cloudflare-workers-kv">Create and Set Up Cloudflare Workers KV.<a hidden class="anchor" aria-hidden="true" href="#create-and-set-up-cloudflare-workers-kv">#</a></h2>
+<p>We will use Cloudflare Workers KV to store the GIF URLs, which will be included in the Telegram bot response.</p>
+<ol>
+<li>Click the <strong>down arrow</strong> next to <strong>Workers &amp; Pages</strong> on the left, and then click the <strong>KV</strong>.</li>
+<li>Click <strong>Create a Namespace</strong>, enter a <strong>Namespace Name</strong>(e.g., kv-gifs), and click <strong>Add</strong>.</li>
+<li>Afterward, the new Namespace will be added to the table blow. Click <strong>View</strong> in the row of the Namespace we just created.</li>
+<li>Go to the <strong>KV Pairs</strong> tab, and enter the key and value as shown in the table below.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gifs</code></td>
+<td><code>[&quot;https://media1.tenor.com/m/-ZQ-I0N9dRwAAAAC/dog-cute-dog.gif&quot;,&quot;https://media.tenor.com/WIMffkKhJC0AAAAi/pig-dog.gif&quot;]</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>You can always replace the values with your own GIF URLs.</p>
+</blockquote>
+<blockquote>
+<p>Cloudflare KV stores data in key-value pairs. Our <strong>value</strong> will be the <strong>URLs in JSON array</strong> format, and we will use <strong>gifts</strong> as the <strong>key</strong> to retrieve it.</p>
+</blockquote>
+<ol start="5">
+<li>Click <strong>Add entry</strong> to save.</li>
+</ol>
+<h2 id="binding-cloudflare-workers-kv-and-variablessecrets-in-cloudflare-workers">Binding Cloudflare Workers KV and Variables/Secrets in Cloudflare Workers.<a hidden class="anchor" aria-hidden="true" href="#binding-cloudflare-workers-kv-and-variablessecrets-in-cloudflare-workers">#</a></h2>
+<p>To use Cloudflare KV in the worker, we need to bind the services together first. Additionally, we will bind our <strong>HTTP API token</strong> and two secret variables.</p>
+<ol>
+<li>Click the <strong>down arrow</strong> next to <strong>Workers &amp; Pages</strong> at the left and select <strong>Overview</strong>.</li>
+<li>Click the <strong>name of the worker</strong>(e.g., gx-bot-worker, from the previous example) we just created earlier.</li>
+<li>Go to the <strong>Settings</strong> tab.</li>
+</ol>
+<h3 id="binding-cloudflare-kv">Binding Cloudflare KV<a hidden class="anchor" aria-hidden="true" href="#binding-cloudflare-kv">#</a></h3>
+<ol>
+<li>Under <strong>Bindings</strong>, click the <strong>+ Add</strong>.</li>
+<li>Click <strong>KV namespace</strong>(e.g., kv-gifs, from the previous example).</li>
+<li>Enter a <strong>Variable name</strong>(e.g., GIFS), choose the <strong>KV namespace</strong> we just created, and click <strong>Deploy</strong>.</li>
+</ol>
+<h3 id="add-variables-and-secrets">Add Variables and Secrets<a hidden class="anchor" aria-hidden="true" href="#add-variables-and-secrets">#</a></h3>
+<p>We will create two variables according to the table below:</p>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ENV_BOT_TOKEN</td>
+<td>&lt;<strong>HTTP API token from BotFather</strong>&gt;</td>
+</tr>
+<tr>
+<td>ENV_BOT_SECRET</td>
+<td>&lt;<strong>A Random combination of A-Z, a-z, 0-9, _ and -</strong>&gt;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>ENV_BOT_TOKEN</code> will store our HTTP API token. For <code>ENV_BOT_SECRET</code>, we need to create a value as a secret key to verify each Telegram updates.</p>
+</blockquote>
+<ol>
+<li>Under <strong>Variables and Secrets</strong>, click <strong>+Add</strong>.</li>
+<li>The <strong>Type</strong> can remain as <strong>text</strong> or be changed to <strong>secret</strong> to encrypt the text.</li>
+<li>Enter the <strong>Variable Name</strong> and <strong>Value</strong> according to the table above.</li>
+<li>Click <strong>Deploy</strong>.</li>
+</ol>
+<h2 id="coding">Coding<a hidden class="anchor" aria-hidden="true" href="#coding">#</a></h2>
+<p>I will fork the code from <a href="https://github.com/cvzi/telegram-bot-cloudflare">telegram-bot-cloudflare</a> by <a href="https://github.com/cvzi">cvzi</a> and then make some modifications to fit our case.</p>
+<p>First, we will declare some variables and constants.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">TOKEN</span>; <span style="color:#75715e">// Get it from @BotFather https://core.telegram.org/bots#6-botfather
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">SECRET</span>; <span style="color:#75715e">// A-Z, a-z, 0-9, _ and -
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ENV_VAL</span>; <span style="color:#75715e">// Enviroment 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">WEBHOOK</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/endpoint&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">BOT_COM</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bot_command&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">GX_COM</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/gx&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MENTION</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;mention&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">TXT_MENTION</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;text_mention&#39;</span>;
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<p>We will create an entry point for the worker to receive and process requests from the Telegram bot API.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">env</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ENV_VAL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">env</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">TOKEN</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">ENV_BOT_TOKEN</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">SECRET</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">ENV_BOT_SECRET</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">route</span>(<span style="color:#a6e22e">request</span>);
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>The Workers runtime will inject the KV bindings, variables and secrets in the <code>env</code>. We assign them to our variables accordingly and pass the <code>request</code> to the <code>route</code> function.</p>
+<!-- raw HTML omitted -->
+<p>The <code>route</code> function will direct the <code>request</code> to be processed with <code>handleWebhook</code> or set up our worker using the <code>registerWebhook</code> and <code>unRegisterWebhook</code> functions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Wait for requests to the worker
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">route</span> (<span style="color:#a6e22e">request</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URL</span>(<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">url</span>)
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">pathname</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">WEBHOOK</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">handleWebhook</span>(<span style="color:#a6e22e">request</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">pathname</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;/registerWebhook&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">registerWebhook</span>(<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">WEBHOOK</span>, <span style="color:#a6e22e">SECRET</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">pathname</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;/unRegisterWebhook&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">unRegisterWebhook</span>(<span style="color:#a6e22e">request</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;No handler for this request&#39;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<p>The <code>registerWebhook</code> function will notify our endpoint URL and  <code>ENV_BOT_SECRET</code> to the Telegram Bot API for receiving new updates. Obviously, the <code>unRegisterWebhook</code> function undoes this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Set webhook to this worker&#39;s url
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * https://core.telegram.org/bots/api#setwebhook
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">registerWebhook</span> (<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">requestUrl</span>, <span style="color:#a6e22e">suffix</span>, <span style="color:#a6e22e">secret</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// https://core.telegram.org/bots/api#setwebhook
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">webhookUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">requestUrl</span>.<span style="color:#a6e22e">protocol</span><span style="color:#e6db74">}</span><span style="color:#e6db74">//</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">requestUrl</span>.<span style="color:#a6e22e">hostname</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">suffix</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> (<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">apiUrl</span>(<span style="color:#e6db74">&#39;setWebhook&#39;</span>, { <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">webhookUrl</span>, <span style="color:#a6e22e">secret_token</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">secret</span> }))).<span style="color:#a6e22e">json</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;ok&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">ok</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;Ok&#39;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">r</span>, <span style="color:#66d9ef">null</span>, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Remove webhook
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * https://core.telegram.org/bots/api#setwebhook
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">unRegisterWebhook</span> (<span style="color:#a6e22e">request</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> (<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">apiUrl</span>(<span style="color:#e6db74">&#39;setWebhook&#39;</span>, { <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span> }))).<span style="color:#a6e22e">json</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;ok&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">ok</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;Ok&#39;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">r</span>, <span style="color:#66d9ef">null</span>, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<p>The <code>handleWebhook</code> function will check the incoming request&rsquo;s secret token from Telegram Bot API against our <code>ENV_BOT_SECRET</code>. After that, it will convert <code>request</code> to JSON format and forward it to <code>onUpdate</code> function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Handle requests to WEBHOOK
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * https://core.telegram.org/bots/api#update
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleWebhook</span> (<span style="color:#a6e22e">request</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Check secret
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;X-Telegram-Bot-Api-Secret-Token&#39;</span>) <span style="color:#f92672">!==</span> <span style="color:#a6e22e">SECRET</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;Unauthorized&#39;</span>, { <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">403</span> })
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Read request body synchronously
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">update</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">json</span>()
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Deal with response asynchronously
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">onUpdate</span>(<span style="color:#a6e22e">update</span>);
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;Ok&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<p>The <code>onUpdate</code> function checks whether the <code>message</code> object exists in the <code>update</code>. if it does, the function forwards the <code>message</code> to <code>onMessage</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Handle incoming Update
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * https://core.telegram.org/bots/api#update
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onUpdate</span> (<span style="color:#a6e22e">update</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#39;message&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">update</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">onMessage</span>(<span style="color:#a6e22e">update</span>.<span style="color:#a6e22e">message</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<p>The <code>onMessage</code> function will perform several checks:</p>
+<ol>
+<li>Check whether the <code>entities</code> object exists in the message.</li>
+<li>Check whether one of the <code>entities</code>&rsquo;s types is  <code>BOT_COM</code>.</li>
+<li>Find the <code>mentionedUser</code> in the <code>entities</code>through the <code>entities</code>&rsquo;s type of <code>MENTION</code> or <code>TXT_MENTION</code>.</li>
+<li>Check whether the command is valid.
+If all the checks pass, extract the username, substitute it into a template string, and pass it to the  <code>sendAnimationAndText</code> function.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Handle incoming Message
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * https://core.telegram.org/bots/api#message
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onMessage</span> (<span style="color:#a6e22e">message</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#e6db74">&#39;entities&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">message</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">validComm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">hasBotComm</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">entities</span>.<span style="color:#a6e22e">some</span>(<span style="color:#a6e22e">entity</span> =&gt; <span style="color:#a6e22e">entity</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">BOT_COM</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mentionedUser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">entities</span>.<span style="color:#a6e22e">find</span>(<span style="color:#a6e22e">entity</span> =&gt; <span style="color:#a6e22e">entity</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MENTION</span> <span style="color:#f92672">||</span>  <span style="color:#a6e22e">entity</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">TXT_MENTION</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">hasBotComm</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">validComm</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">startsWith</span>(<span style="color:#a6e22e">GX_COM</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">hasBotComm</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">validComm</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">mentionedUser</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">text</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mentionedUsername</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">mentionedUser</span>.<span style="color:#a6e22e">offset</span>, <span style="color:#a6e22e">mentionedUser</span>.<span style="color:#a6e22e">offset</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">mentionedUser</span>.<span style="color:#a6e22e">length</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`恭喜群友 </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">mentionedUsername</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> 赚钱`</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sendAnimationAndText</span>(<span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">chat</span>.<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">response</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<p>The <code>sendAnimationAndText</code> function will retrieve the list of gifs from KV and randomly pick a URL from it. Afterwards, it will pass all the parameters to <code>apiUrl</code> to form a query string and send it as a response to the Telegram Bot API.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Send plain text message
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * https://core.telegram.org/bots/api#sendmessage
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sendAnimationAndText</span> (<span style="color:#a6e22e">chatId</span>, <span style="color:#a6e22e">text</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">gifs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">ENV_VAL</span>.<span style="color:#a6e22e">GIFS</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;gifs&#34;</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">randomGif</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gifs</span>[Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#a6e22e">gifs</span>.<span style="color:#a6e22e">length</span>)];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">apiUrl</span>(<span style="color:#e6db74">&#39;sendAnimation&#39;</span>, {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">chat_id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">chatId</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">animation</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">randomGif</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">caption</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">text</span>
+</span></span><span style="display:flex;"><span>  }))).<span style="color:#a6e22e">json</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<p>The <code>apiUrl</code> is a utility function that converts the passed-in parameters to query strings.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Return url to telegram api, optionally with parameters added
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">apiUrl</span> (<span style="color:#a6e22e">methodName</span>, <span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">query</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">params</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">query</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;?&#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(<span style="color:#a6e22e">params</span>).<span style="color:#a6e22e">toString</span>()
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`https://api.telegram.org/bot</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">TOKEN</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">methodName</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">query</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="full-code">Full code<a hidden class="anchor" aria-hidden="true" href="#full-code">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Original source code: https://github.com/cvzi/telegram-bot-cloudflare
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * with some modification by YJCHOO
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">TOKEN</span>; <span style="color:#75715e">// Get it from @BotFather https://core.telegram.org/bots#6-botfather
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">SECRET</span>; <span style="color:#75715e">// A-Z, a-z, 0-9, _ and -
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ENV_VAL</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">WEBHOOK</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/endpoint&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">BOT_COM</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bot_command&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">GX_COM</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/gx&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MENTION</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;mention&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">TXT_MENTION</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;text_mention&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">env</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ENV_VAL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">env</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">TOKEN</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">ENV_BOT_TOKEN</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">SECRET</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">ENV_BOT_SECRET</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">route</span>(<span style="color:#a6e22e">request</span>);
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Wait for requests to the worker
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">route</span> (<span style="color:#a6e22e">request</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URL</span>(<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">url</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">pathname</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">WEBHOOK</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">handleWebhook</span>(<span style="color:#a6e22e">request</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">pathname</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;/registerWebhook&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">registerWebhook</span>(<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">WEBHOOK</span>, <span style="color:#a6e22e">SECRET</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">pathname</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;/unRegisterWebhook&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">unRegisterWebhook</span>(<span style="color:#a6e22e">request</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;No handler for this request&#39;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Handle requests to WEBHOOK
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * https://core.telegram.org/bots/api#update
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleWebhook</span> (<span style="color:#a6e22e">request</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Check secret
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;X-Telegram-Bot-Api-Secret-Token&#39;</span>) <span style="color:#f92672">!==</span> <span style="color:#a6e22e">SECRET</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;Unauthorized&#39;</span>, { <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">403</span> });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Read request body synchronously
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">update</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">json</span>();
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Deal with response asynchronously
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">onUpdate</span>(<span style="color:#a6e22e">update</span>);
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;Ok&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Handle incoming Update
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * https://core.telegram.org/bots/api#update
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onUpdate</span> (<span style="color:#a6e22e">update</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#39;message&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">update</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">onMessage</span>(<span style="color:#a6e22e">update</span>.<span style="color:#a6e22e">message</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Handle incoming Message
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * https://core.telegram.org/bots/api#message
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onMessage</span> (<span style="color:#a6e22e">message</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#e6db74">&#39;entities&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">message</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">validComm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">hasBotComm</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">entities</span>.<span style="color:#a6e22e">some</span>(<span style="color:#a6e22e">entity</span> =&gt; <span style="color:#a6e22e">entity</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">BOT_COM</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mentionedUser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">entities</span>.<span style="color:#a6e22e">find</span>(<span style="color:#a6e22e">entity</span> =&gt; <span style="color:#a6e22e">entity</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MENTION</span> <span style="color:#f92672">||</span>  <span style="color:#a6e22e">entity</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">TXT_MENTION</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">hasBotComm</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">validComm</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">startsWith</span>(<span style="color:#a6e22e">GX_COM</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">hasBotComm</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">validComm</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">mentionedUser</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">text</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mentionedUsername</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">mentionedUser</span>.<span style="color:#a6e22e">offset</span>, <span style="color:#a6e22e">mentionedUser</span>.<span style="color:#a6e22e">offset</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">mentionedUser</span>.<span style="color:#a6e22e">length</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`恭喜群友 </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">mentionedUsername</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> 赚钱`</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sendAnimationAndText</span>(<span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">chat</span>.<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">response</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Send plain text message
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * https://core.telegram.org/bots/api#sendmessage
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sendAnimationAndText</span> (<span style="color:#a6e22e">chatId</span>, <span style="color:#a6e22e">text</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">gifs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">ENV_VAL</span>.<span style="color:#a6e22e">GIFS</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;gifs&#34;</span>));
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">randomGif</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gifs</span>[Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#a6e22e">gifs</span>.<span style="color:#a6e22e">length</span>)];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">apiUrl</span>(<span style="color:#e6db74">&#39;sendAnimation&#39;</span>, {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">chat_id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">chatId</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">animation</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">randomGif</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">caption</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">text</span>
+</span></span><span style="display:flex;"><span>  }))).<span style="color:#a6e22e">json</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Set webhook to this worker&#39;s url
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * https://core.telegram.org/bots/api#setwebhook
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">registerWebhook</span> (<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">requestUrl</span>, <span style="color:#a6e22e">suffix</span>, <span style="color:#a6e22e">secret</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// https://core.telegram.org/bots/api#setwebhook
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">webhookUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">requestUrl</span>.<span style="color:#a6e22e">protocol</span><span style="color:#e6db74">}</span><span style="color:#e6db74">//</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">requestUrl</span>.<span style="color:#a6e22e">hostname</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">suffix</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> (<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">apiUrl</span>(<span style="color:#e6db74">&#39;setWebhook&#39;</span>, { <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">webhookUrl</span>, <span style="color:#a6e22e">secret_token</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">secret</span> }))).<span style="color:#a6e22e">json</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;ok&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">ok</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;Ok&#39;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">r</span>, <span style="color:#66d9ef">null</span>, <span style="color:#ae81ff">2</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Remove webhook
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * https://core.telegram.org/bots/api#setwebhook
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">unRegisterWebhook</span> (<span style="color:#a6e22e">request</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> (<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">apiUrl</span>(<span style="color:#e6db74">&#39;setWebhook&#39;</span>, { <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span> }))).<span style="color:#a6e22e">json</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;ok&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">ok</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;Ok&#39;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">r</span>, <span style="color:#66d9ef">null</span>, <span style="color:#ae81ff">2</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Return url to telegram api, optionally with parameters added
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">apiUrl</span> (<span style="color:#a6e22e">methodName</span>, <span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">query</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">params</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">query</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;?&#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(<span style="color:#a6e22e">params</span>).<span style="color:#a6e22e">toString</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`https://api.telegram.org/bot</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">TOKEN</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">methodName</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">query</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="testing">Testing<a hidden class="anchor" aria-hidden="true" href="#testing">#</a></h2>
+<p>Now, it&rsquo;s time to test the bot.</p>
+<p>Search our bot, click <code>start</code> and type command.</p>
+<p><img loading="lazy" src="./imgs/telegram-congratulatory-bot-testing.webp" alt="Telegram congratulatory bot testing"  />
+</p>
+<p>Add the bot to our group chat and test it.</p>
+<p><img loading="lazy" src="./imgs/telegram-congratulatory-bot-testing-in-group-chat.webp" alt="Telegram congratulatory bot testing"  />
+</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/cloudflare-workers/">Cloudflare Workers</a></li>
+      <li><a href="http://localhost:1313/tags/cloudflare-workers-kv/">Cloudflare Workers Kv</a></li>
+      <li><a href="http://localhost:1313/tags/telegram-bot/">Telegram Bot</a></li>
+      <li><a href="http://localhost:1313/tags/serverless/">Serverless</a></li>
+      <li><a href="http://localhost:1313/tags/cloud-data-storage/">Cloud Data Storage</a></li>
+      <li><a href="http://localhost:1313/tags/javascript/">Javascript</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Running LLM and Stable Diffusion Locally on My Low-End Hardware</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Create a Telegram Bot using JavaScript, Cloudflare Workers and KV. on x"
+            href="https://x.com/intent/tweet/?text=Create%20a%20Telegram%20Bot%20using%20JavaScript%2c%20Cloudflare%20Workers%20and%20KV.&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcreate-telegram-bot-with-cloudflare-workers-kv%2f&amp;hashtags=cloudflareworkers%2ccloudflareworkerskv%2ctelegrambot%2cserverless%2cjavascript%2cclouddatastorage%2cjavascript">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Create a Telegram Bot using JavaScript, Cloudflare Workers and KV. on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcreate-telegram-bot-with-cloudflare-workers-kv%2f&amp;title=Create%20a%20Telegram%20Bot%20using%20JavaScript%2c%20Cloudflare%20Workers%20and%20KV.&amp;summary=Create%20a%20Telegram%20Bot%20using%20JavaScript%2c%20Cloudflare%20Workers%20and%20KV.&amp;source=http%3a%2f%2flocalhost%3a1313%2fposts%2fcreate-telegram-bot-with-cloudflare-workers-kv%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Create a Telegram Bot using JavaScript, Cloudflare Workers and KV. on reddit"
+            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcreate-telegram-bot-with-cloudflare-workers-kv%2f&title=Create%20a%20Telegram%20Bot%20using%20JavaScript%2c%20Cloudflare%20Workers%20and%20KV.">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Create a Telegram Bot using JavaScript, Cloudflare Workers and KV. on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fcreate-telegram-bot-with-cloudflare-workers-kv%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Create a Telegram Bot using JavaScript, Cloudflare Workers and KV. on whatsapp"
+            href="https://api.whatsapp.com/send?text=Create%20a%20Telegram%20Bot%20using%20JavaScript%2c%20Cloudflare%20Workers%20and%20KV.%20-%20http%3a%2f%2flocalhost%3a1313%2fposts%2fcreate-telegram-bot-with-cloudflare-workers-kv%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Create a Telegram Bot using JavaScript, Cloudflare Workers and KV. on telegram"
+            href="https://telegram.me/share/url?text=Create%20a%20Telegram%20Bot%20using%20JavaScript%2c%20Cloudflare%20Workers%20and%20KV.&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcreate-telegram-bot-with-cloudflare-workers-kv%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Create a Telegram Bot using JavaScript, Cloudflare Workers and KV. on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=Create%20a%20Telegram%20Bot%20using%20JavaScript%2c%20Cloudflare%20Workers%20and%20KV.&u=http%3a%2f%2flocalhost%3a1313%2fposts%2fcreate-telegram-bot-with-cloudflare-workers-kv%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer><script src="https://giscus.app/client.js"
+        data-repo="JuanTechBlog/juantechblog.github.io"
+        data-repo-id="R_kgDOLHpjjw"
+        data-category="General"
+        data-category-id="DIC_kwDOLHpjj84Ccp5u"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">Juan&#39;s Tech Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
