@@ -3,7 +3,7 @@ title: "DIY a Floating Wall Mounted TV Console Part 1: Preparation"
 description: "Before building a floating TV cabinet, "
 date: ""
 tags: ["TV Wall Upgrage Project", "Floating Wall Mounted TV Console", "", "Home Assistant", "ESP8266", "LD2410", "Human Presence Sensor", "DIY", "YouTube"]
-draft: false
+draft: true
 ShowToc: true
 CanonicalLinkText: ""
 cover:
