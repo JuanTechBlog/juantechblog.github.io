@@ -11,7 +11,7 @@
 <meta name="author" content="">
 <link rel="canonical" href="https://juanstechblog.blogspot.com/2023/12/build-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.html">
 <meta name="google-site-verification" content="8tuuNRZtCnIRwkCljQTqQ_4KvsAJ-_jqNhFgewUSIFU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.4599eadb9eb2ad3d0a8d6827b41a8fda8f2f4af226b63466c09c5fddbc8706b7.css" integrity="sha256-RZnq256yrT0KjWgntBqP2o8vSvImtjRmwJxf3byHBrc=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.36819bea596090d8b48cf10d9831382996197aa7e4fc86f792f7c08c9ca4d23b.css" integrity="sha256-NoGb6llgkNi0jPENmDE4KZYZeqfk/Ib3kvfAjJyk0js=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -58,8 +58,6 @@
     </style>
 </noscript><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634877819425351"
      crossorigin="anonymous"></script>
-  
-    
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPQZ6L0MQS"></script>
       <script>
         var doNotTrack = false;
@@ -73,22 +71,26 @@
           gtag('js', new Date());
           gtag('config', 'G-VPQZ6L0MQS');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant." />
-<meta property="og:description" content="Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/" />
-<meta property="og:image" content="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-01-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-01-29T00:00:00+00:00" /><meta property="og:site_name" content="Juan&#39;s Tech Blog" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp" />
-<meta name="twitter:title" content="Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant."/>
-<meta name="twitter:description" content="Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant."/>
+      </script><meta property="og:url" content="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/">
+  <meta property="og:site_name" content="Juan&#39;s Tech Blog">
+  <meta property="og:title" content="Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant.">
+  <meta property="og:description" content="Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-01-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-01-29T00:00:00+00:00">
+    <meta property="article:tag" content="Home Automation">
+    <meta property="article:tag" content="Smart Home">
+    <meta property="article:tag" content="ESPHome">
+    <meta property="article:tag" content="Home Assistant">
+    <meta property="article:tag" content="ESP8266">
+    <meta property="article:tag" content="LD2410">
+    <meta property="og:image" content="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp">
+<meta name="twitter:title" content="Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant.">
+<meta name="twitter:description" content="Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant.">
 
 
 <script type="application/ld+json">
@@ -159,7 +161,7 @@
         <div class="logo">
             <a href="http://localhost:1313/" accesskey="h" title="Juan&#39;s Tech Blog (Alt + H)">Juan&#39;s Tech Blog</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -179,8 +181,6 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-                <ul class="lang-switch"><li>|</li>
-                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -209,8 +209,8 @@
 </div>
   </header> 
 <figure class="entry-cover">
-        <img loading="eager" src="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp" alt="DIY Human Presence Sensor with ESP8266, LD2410 and ESPHome.">
-        <p>DIY Human Presence Sensor with ESP8266, LD2410 and ESPHome.</p>
+            <img loading="eager" src="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp" alt="DIY Human Presence Sensor with ESP8266, LD2410 and ESPHome.">
+        <figcaption>DIY Human Presence Sensor with ESP8266, LD2410 and ESPHome.</figcaption>
 </figure><div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
@@ -260,8 +260,7 @@
 <p>Next, We run the ESPHome Dashboard in a Docker container using Docker Compose.</p>
 <p>We can create a new or modify existing docker-compose.yaml as below:</p>
 <blockquote>
-<p>The script below is from the official documentation.</p>
-</blockquote>
+<p>The script below is from the official documentation.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">esphome</span>:
@@ -277,8 +276,7 @@
 </span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">USERNAME=ChangeHere</span>
 </span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">PASSWORD=ChangeHere</span>
 </span></span></code></pre></div><blockquote>
-<p>Remember to change the <code>USERNAME</code> and <code>PASSWORD</code> variables in the <code>environment</code>.</p>
-</blockquote>
+<p>Remember to change the <code>USERNAME</code> and <code>PASSWORD</code> variables in the <code>environment</code>.</p></blockquote>
 <p>We can execute the command below to start the container.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ docker compose up -d
 </span></span></code></pre></div><p>Once the ESPHome Dashboard is started, we can log on to the web page.</p>
@@ -461,34 +459,33 @@
 <p>Hit the <strong><em>INSTALL</em></strong> button in n the <strong>⋮</strong>(three vertical dots button) to upload the new configuration into ESP8266.</p>
 <h2 id="esp8266-ld2410-and-parts-assembly">ESP8266, LD2410 and Parts Assembly.<a hidden class="anchor" aria-hidden="true" href="#esp8266-ld2410-and-parts-assembly">#</a></h2>
 <p>Now, we can unplug the USB cable and wire up the LD2410C sensor module with ESP8266.</p>
-<p><img loading="lazy" src="diy-human-presence-sensor-esp8266-ld2410-schematic-diagram.webp" alt="DIY Human Presence Sensor with ESP8266 and LD2410 Schematic Diagram"  />
-</p>
+<p><img alt="DIY Human Presence Sensor with ESP8266 and LD2410 Schematic Diagram" loading="lazy" src="/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/diy-human-presence-sensor-esp8266-ld2410-schematic-diagram.webp"></p>
 <p>Wire the ESP8266 and LD2410 as below:</p>
 <table>
-<thead>
-<tr>
-<th>ESP8266</th>
-<th>LD2410</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>RX(GPIO3)</td>
-<td>TX</td>
-</tr>
-<tr>
-<td>TX(GPIO1)</td>
-<td>RX</td>
-</tr>
-<tr>
-<td>VIN</td>
-<td>VCC</td>
-</tr>
-<tr>
-<td>GND</td>
-<td>GND</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>ESP8266</th>
+          <th>LD2410</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>RX(GPIO3)</td>
+          <td>TX</td>
+      </tr>
+      <tr>
+          <td>TX(GPIO1)</td>
+          <td>RX</td>
+      </tr>
+      <tr>
+          <td>VIN</td>
+          <td>VCC</td>
+      </tr>
+      <tr>
+          <td>GND</td>
+          <td>GND</td>
+      </tr>
+  </tbody>
 </table>
 <h2 id="integrate-esphome-device-into-home-assistant">Integrate ESPHome Device into Home Assistant<a hidden class="anchor" aria-hidden="true" href="#integrate-esphome-device-into-home-assistant">#</a></h2>
 <p>The last step is to integrate the ESPHome device into Home Assistant.</p>
@@ -502,8 +499,7 @@
 <li>Done.</li>
 </ol>
 <h2 id="result">Result<a hidden class="anchor" aria-hidden="true" href="#result">#</a></h2>
-<p><img loading="lazy" src="ld2410-reading-in-home-assistant.webp" alt="LD2410 Human Presence Sensor status in Home Assistant"  />
-</p>
+<p><img alt="LD2410 Human Presence Sensor status in Home Assistant" loading="lazy" src="/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/ld2410-reading-in-home-assistant.webp"></p>
 <p>In the end, we should get the LD2410&rsquo;s reading in the Home Assistant → Settings → Devices and Services → Devices tab(on top of the webpage) → Click the ESP8266 ESPHome device.</p>
 
 
@@ -622,7 +618,8 @@
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="http://localhost:1313/">Juan&#39;s Tech Blog</a></span>
+        <span>&copy; 2025 <a href="http://localhost:1313/">Juan&#39;s Tech Blog</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

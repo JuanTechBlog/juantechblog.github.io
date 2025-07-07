@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Docker Compose on Juan&#39;s Tech Blog</title>
     <link>http://localhost:1313/tags/docker-compose/</link>
     <description>Recent content in Docker Compose on Juan&#39;s Tech Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jan 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/docker-compose/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How to Access Home Assistant Remotely.</title>
-      <link>http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</link>
-      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</guid>
-      <description>Step-by-step guides to get a .PP.UA domain, set up Cloudfalre as your nameserver, configure Cloudflare Tunnel, install Cloudflare Tunnel docker client and configure Home Assistant.</description>
-    </item>
     <item>
       <title>Integrate SONOFF Zigbee USB Dongle 3.0 Plus-P into Home Assistant.</title>
       <link>http://localhost:1313/posts/integrate-sonoff-zigbee-dongle-plus-p-into-home-assistant/</link>

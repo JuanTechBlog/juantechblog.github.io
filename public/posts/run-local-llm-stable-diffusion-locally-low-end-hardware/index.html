@@ -11,7 +11,7 @@
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/">
 <meta name="google-site-verification" content="8tuuNRZtCnIRwkCljQTqQ_4KvsAJ-_jqNhFgewUSIFU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.4599eadb9eb2ad3d0a8d6827b41a8fda8f2f4af226b63466c09c5fddbc8706b7.css" integrity="sha256-RZnq256yrT0KjWgntBqP2o8vSvImtjRmwJxf3byHBrc=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.36819bea596090d8b48cf10d9831382996197aa7e4fc86f792f7c08c9ca4d23b.css" integrity="sha256-NoGb6llgkNi0jPENmDE4KZYZeqfk/Ib3kvfAjJyk0js=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -58,8 +58,6 @@
     </style>
 </noscript><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634877819425351"
      crossorigin="anonymous"></script>
-  
-    
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPQZ6L0MQS"></script>
       <script>
         var doNotTrack = false;
@@ -73,22 +71,26 @@
           gtag('js', new Date());
           gtag('config', 'G-VPQZ6L0MQS');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Running LLM and Stable Diffusion Locally on My Low-End Hardware" />
-<meta property="og:description" content="Try running Llama 3.2 1B Q8, Llama 3.2 3B Q8 &amp; Stable Diffusion 1.5 on Intel UHD Graphics 630. Also, try to run AI models on the CPU." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/" />
-<meta property="og:image" content="http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/run-llms-and-stable-diffusion-locally-on-intel-uhd-630.webp" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-10-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-10-28T00:00:00+00:00" /><meta property="og:site_name" content="Juan&#39;s Tech Blog" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/run-llms-and-stable-diffusion-locally-on-intel-uhd-630.webp" />
-<meta name="twitter:title" content="Running LLM and Stable Diffusion Locally on My Low-End Hardware"/>
-<meta name="twitter:description" content="Try running Llama 3.2 1B Q8, Llama 3.2 3B Q8 &amp; Stable Diffusion 1.5 on Intel UHD Graphics 630. Also, try to run AI models on the CPU."/>
+      </script><meta property="og:url" content="http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/">
+  <meta property="og:site_name" content="Juan&#39;s Tech Blog">
+  <meta property="og:title" content="Running LLM and Stable Diffusion Locally on My Low-End Hardware">
+  <meta property="og:description" content="Try running Llama 3.2 1B Q8, Llama 3.2 3B Q8 &amp; Stable Diffusion 1.5 on Intel UHD Graphics 630. Also, try to run AI models on the CPU.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-28T00:00:00+00:00">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="LLM">
+    <meta property="article:tag" content="Stable Diffusion 1.5">
+    <meta property="article:tag" content="Llama 3.2 1B Q8">
+    <meta property="article:tag" content="Llama 3.2 3B Q8">
+    <meta property="article:tag" content="Jan AI">
+    <meta property="og:image" content="http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/run-llms-and-stable-diffusion-locally-on-intel-uhd-630.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/run-llms-and-stable-diffusion-locally-on-intel-uhd-630.webp">
+<meta name="twitter:title" content="Running LLM and Stable Diffusion Locally on My Low-End Hardware">
+<meta name="twitter:description" content="Try running Llama 3.2 1B Q8, Llama 3.2 3B Q8 &amp; Stable Diffusion 1.5 on Intel UHD Graphics 630. Also, try to run AI models on the CPU.">
 
 
 <script type="application/ld+json">
@@ -159,7 +161,7 @@
         <div class="logo">
             <a href="http://localhost:1313/" accesskey="h" title="Juan&#39;s Tech Blog (Alt + H)">Juan&#39;s Tech Blog</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -179,8 +181,6 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-                <ul class="lang-switch"><li>|</li>
-                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -208,8 +208,8 @@
 </div>
   </header> 
 <figure class="entry-cover">
-        <img loading="eager" src="http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/run-llms-and-stable-diffusion-locally-on-intel-uhd-630.webp" alt="Run LLMs and Stable Diffusion Locally on Intel UHD 630">
-        <p>Run LLMs and Stable Diffusion Locally on Intel UHD 630</p>
+            <img loading="eager" src="http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/run-llms-and-stable-diffusion-locally-on-intel-uhd-630.webp" alt="Run LLMs and Stable Diffusion Locally on Intel UHD 630">
+        <figcaption>Run LLMs and Stable Diffusion Locally on Intel UHD 630</figcaption>
 </figure><div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
@@ -242,34 +242,34 @@
 
   <div class="post-content"><p>Let&rsquo;s start with my PC spec.</p>
 <table>
-<thead>
-<tr>
-<th>Components</th>
-<th>Parts</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Processor</td>
-<td>Intel i5 10400ES</td>
-</tr>
-<tr>
-<td>iGPU</td>
-<td><code>Intel UHD Graphics 630</code></td>
-</tr>
-<tr>
-<td>Motherboard</td>
-<td>AsRock B460M Pro</td>
-</tr>
-<tr>
-<td>RAM</td>
-<td>Adata DDR4-2666 4GB x2</td>
-</tr>
-<tr>
-<td>dGPU</td>
-<td>N/A</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Components</th>
+          <th>Parts</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Processor</td>
+          <td>Intel i5 10400ES</td>
+      </tr>
+      <tr>
+          <td>iGPU</td>
+          <td><code>Intel UHD Graphics 630</code></td>
+      </tr>
+      <tr>
+          <td>Motherboard</td>
+          <td>AsRock B460M Pro</td>
+      </tr>
+      <tr>
+          <td>RAM</td>
+          <td>Adata DDR4-2666 4GB x2</td>
+      </tr>
+      <tr>
+          <td>dGPU</td>
+          <td>N/A</td>
+      </tr>
+  </tbody>
 </table>
 <p>When it comes to AI, most people probably think it requires a beefy GPU to run smoothly and quickly.
 And that&rsquo;s true.
@@ -291,51 +291,40 @@ I will test run the <code>Llama 3.2 1B Instruct Q8</code> and <code>Llama 3.2 3B
 </ol>
 <h3 id="first-attempt-on-igpu">First Attempt on iGPU<a hidden class="anchor" aria-hidden="true" href="#first-attempt-on-igpu">#</a></h3>
 <p>I run the <code>Llama 3.2 1B Instruct Q8</code> on my iGPU and asked it, &ldquo;List down what you can do for me&rdquo;.</p>
-<p><img loading="lazy" src="./imgs/jan-ai-gpu-vulkan-llama-3-2-1b-q8-usage.webp" alt="Intel UHD 630 utilization stats while running Llama 3.2 1B Instruct Q8 on iGPU using Vulkan and Jan AI "  />
-
+<p><img alt="Intel UHD 630 utilization stats while running Llama 3.2 1B Instruct Q8 on iGPU using Vulkan and Jan AI " loading="lazy" src="/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/jan-ai-gpu-vulkan-llama-3-2-1b-q8-usage.webp">
 The iGPU utilization almost hit 100% while generating the response.</p>
-<p><img loading="lazy" src="./imgs/jan-ai-gpu-vulkan-llama-3-2-1b-q8.webp" alt="Running Llama 3.2 1B Instruct Q8 on iGPU using Vulkan and Jan AI"  />
-
+<p><img alt="Running Llama 3.2 1B Instruct Q8 on iGPU using Vulkan and Jan AI" loading="lazy" src="/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/jan-ai-gpu-vulkan-llama-3-2-1b-q8.webp">
 The token speed is around <code>7.7t/s</code>, which is fairly usable.</p>
 <h3 id="second-attempt-on-igpu">Second Attempt on iGPU<a hidden class="anchor" aria-hidden="true" href="#second-attempt-on-igpu">#</a></h3>
 <p>Next, I switch the model to <code>Llama 3.2 3B Instruct Q8</code> and run it.</p>
-<p><img loading="lazy" src="./imgs/jan-ai-cpu-llama-3-2-3b-q8-out-of-device-memory.webp" alt="Error message while running Llama 3.2 32sB Instruct Q8 on iGPU using Vulkan and Jan AI"  />
-
+<p><img alt="Error message while running Llama 3.2 32sB Instruct Q8 on iGPU using Vulkan and Jan AI" loading="lazy" src="/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/jan-ai-cpu-llama-3-2-3b-q8-out-of-device-memory.webp">
 <code>The model can't even start</code>—it failed to allocate memory due to <code>insufficient device memory</code>, as noted in the log.</p>
 <p>The <a href="https://llamaimodel.com/requirements-3-2/#3B">Llama 3.2 3B Instruct Q8 require</a> at least 8GB VRAM. My iGPU only got 4GB shared VRAM. Obviously, I don&rsquo;t have enough RAM to share with my iGPU.</p>
 <h3 id="third-attempt-on-cpu">Third Attempt on CPU<a hidden class="anchor" aria-hidden="true" href="#third-attempt-on-cpu">#</a></h3>
 <p>Why not try the CPU instead? I toggle off the Vulkan support and run <code>Llama 3.2 1B Instruct Q8</code> on the <code>CPU</code>.</p>
-<p><img loading="lazy" src="./imgs/jan-ai-cpu-llama-3-2-1b-q8-usage.webp" alt="CPU utilization stats while running Llama 3.2 1B Instruct Q8 on CPU using Jan AI"  />
-
+<p><img alt="CPU utilization stats while running Llama 3.2 1B Instruct Q8 on CPU using Jan AI" loading="lazy" src="/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/jan-ai-cpu-llama-3-2-1b-q8-usage.webp">
 CPU utilization is between 80% and 90% during response generation.</p>
-<p><img loading="lazy" src="./imgs/jan-ai-cpu-llama-3-2-1b-q8.webp" alt="Running Llama 3.2 1B Instruct Q8 on CPU using Jan AI "  />
-
+<p><img alt="Running Llama 3.2 1B Instruct Q8 on CPU using Jan AI " loading="lazy" src="/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/jan-ai-cpu-llama-3-2-1b-q8.webp">
 WoW! The token speed is double up to <code>14.46t/s</code>, which is faster than the iGPU.</p>
 <h3 id="fourth-attempt-on-cpu">Fourth Attempt on CPU<a hidden class="anchor" aria-hidden="true" href="#fourth-attempt-on-cpu">#</a></h3>
 <p>I continue try the Llama 3.2 3B Instruct Q8 on the CPU. This time, the model able to start and generate response.</p>
-<p><img loading="lazy" src="./imgs/jan-ai-cpu-llama-3-2-3b-q8-usage.webp" alt="CPU utilization stats while running Llama 3.2 3B Instruct Q8 on CPU using Jan AI"  />
-
+<p><img alt="CPU utilization stats while running Llama 3.2 3B Instruct Q8 on CPU using Jan AI" loading="lazy" src="/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/jan-ai-cpu-llama-3-2-3b-q8-usage.webp">
 CPU utilization close to 100% while generating response.</p>
-<p><img loading="lazy" src="./imgs/jan-ai-cpu-llama-3-2-3b-q8.webp" alt="Running Llama 3.2 3B Instruct Q8 on CPU using Jan AI"  />
-
+<p><img alt="Running Llama 3.2 3B Instruct Q8 on CPU using Jan AI" loading="lazy" src="/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/jan-ai-cpu-llama-3-2-3b-q8.webp">
 The token speed is about 5.56t/s, which is a bit slow but still usable.</p>
 <h2 id="stable-diffusion-test-run-sd-15">Stable Diffusion Test Run (SD 1.5)<a hidden class="anchor" aria-hidden="true" href="#stable-diffusion-test-run-sd-15">#</a></h2>
 <p>To run Stable Diffusion on the iGPU, I use the <code>stable-diffusion.cpp</code> version that supports <code>Vulkan</code>.</p>
 <h3 id="first-attempt-on-igpu-1">First Attempt on iGPU<a hidden class="anchor" aria-hidden="true" href="#first-attempt-on-igpu-1">#</a></h3>
 <p>I run the <code>Vulkan-supported stable-diffusion.cpp</code> executable with <code>Stable Diffusion 1.5 model</code> and using a <code>simple prompt, &quot;people&quot;</code>, with <code>default settings</code>.</p>
-<p><img loading="lazy" src="./imgs/stable-diffusion-cpp-gpu-vulkan-usage.webp" alt="iGPU utilization stats while running Stable Diffusion 1.5 using stable-diffusion.cpp and Vulkan on iGPU"  />
-
+<p><img alt="iGPU utilization stats while running Stable Diffusion 1.5 using stable-diffusion.cpp and Vulkan on iGPU" loading="lazy" src="/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/stable-diffusion-cpp-gpu-vulkan-usage.webp">
 The iGPU utilization is around 100%.</p>
-<p><img loading="lazy" src="./imgs/stable-diffusion-cpp-gpu-vulkan-cli-prompt.webp" alt="Running Stable Diffusion 1.5 using stable-diffusion.cpp and Vulkan on iGPU"  />
-
+<p><img alt="Running Stable Diffusion 1.5 using stable-diffusion.cpp and Vulkan on iGPU" loading="lazy" src="/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/stable-diffusion-cpp-gpu-vulkan-cli-prompt.webp">
 It takes 551.46s(≈ 9 minutes and 11 seconds) to complete and the speed is 28.09s/it.</p>
 <h3 id="second-attempt-on-cpu---avx2">Second Attempt on CPU - AVX2<a hidden class="anchor" aria-hidden="true" href="#second-attempt-on-cpu---avx2">#</a></h3>
 <p>I then download the <code>CPU AVX2-supported</code> stable-diffusion.cpp. I run it with <code>Stable Diffusion 1.5</code> model and a <code>simple prompt, &quot;people&quot;</code>. All the <code>settings remain default</code>.</p>
-<p><img loading="lazy" src="./imgs/stable-diffusion-cpp-cpu-avx2-usage.webp" alt="CPU utilization stats while running Stable Diffusion 1.5 using stable-diffusion.cpp and AVX2 on CPU"  />
-
+<p><img alt="CPU utilization stats while running Stable Diffusion 1.5 using stable-diffusion.cpp and AVX2 on CPU" loading="lazy" src="/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/stable-diffusion-cpp-cpu-avx2-usage.webp">
 The CPU utilization is around 66% only.</p>
-<p><img loading="lazy" src="./imgs/stable-diffusion-cpp-cpu-avx2-cli-prompt.webp" alt="running Stable Diffusion 1.5 using stable-diffusion.cpp and AVX2 on CPU"  />
-
+<p><img alt="running Stable Diffusion 1.5 using stable-diffusion.cpp and AVX2 on CPU" loading="lazy" src="/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/imgs/stable-diffusion-cpp-cpu-avx2-cli-prompt.webp">
 It take 352.32s(≈ 5 minutes and 52 seconds) to complete with the speed of 16.41s/it.—nearly twice as fast as the iGPU.</p>
 <h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
 <p>Thanks to Vulkan, I can play a little bit of AI things on my low-end iGPU.
@@ -360,15 +349,15 @@ For example, if I&rsquo;m coding and need a LLM to help debug, I could let the i
       <li><a href="http://localhost:1313/tags/avx2/">AVX2</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/">
+  <a class="prev" href="http://localhost:1313/posts/create-telegram-bot-using-javascript-cloudflare-workers-cloudflare-workers-kv/">
     <span class="title">« Prev</span>
     <br>
-    <span>Create a Telegram Bot using JavaScript, Cloudflare Workers and KV.</span>
+    <span>Create a Telegram Bot using JavaScript, Cloudflare Workers and Cloudflare Workers KV.</span>
   </a>
-  <a class="next" href="http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/">
+  <a class="next" href="http://localhost:1313/posts/how-to-fix-ch340-driver-3-8-issue/">
     <span class="title">Next »</span>
     <br>
-    <span>How to Access Home Assistant Remotely.</span>
+    <span>How to Fix CH340 USB to Serial Driver 3.8 version issue.</span>
   </a>
 </nav>
 
@@ -460,7 +449,8 @@ For example, if I&rsquo;m coding and need a LLM to help debug, I could let the i
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="http://localhost:1313/">Juan&#39;s Tech Blog</a></span>
+        <span>&copy; 2025 <a href="http://localhost:1313/">Juan&#39;s Tech Blog</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

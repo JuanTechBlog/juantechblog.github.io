@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Juan&#39;s Tech Blog</title>
     <link>http://localhost:1313/</link>
     <description>Recent content on Juan&#39;s Tech Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 10 Dec 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Create a Telegram Bot using JavaScript, Cloudflare Workers and KV.</title>
-      <link>http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/</link>
+      <title>Create a Telegram Bot using JavaScript, Cloudflare Workers and Cloudflare Workers KV.</title>
+      <link>http://localhost:1313/posts/create-telegram-bot-using-javascript-cloudflare-workers-cloudflare-workers-kv/</link>
       <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/create-telegram-bot-with-cloudflare-workers-kv/</guid>
+      <guid>http://localhost:1313/posts/create-telegram-bot-using-javascript-cloudflare-workers-cloudflare-workers-kv/</guid>
       <description>Step-by-step guide to set up Telegram bot with Botfather, serverless service Cloudflare Workers, data storage Cloudflare Workers KV and coding using JavaScript.</description>
     </item>
     <item>
@@ -21,20 +21,6 @@
       <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/</guid>
       <description>Try running Llama 3.2 1B Q8, Llama 3.2 3B Q8 &amp;amp; Stable Diffusion 1.5 on Intel UHD Graphics 630. Also, try to run AI models on the CPU.</description>
-    </item>
-    <item>
-      <title>How to Access Home Assistant Remotely.</title>
-      <link>http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</link>
-      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</guid>
-      <description>Step-by-step guides to get a .PP.UA domain, set up Cloudfalre as your nameserver, configure Cloudflare Tunnel, install Cloudflare Tunnel docker client and configure Home Assistant.</description>
-    </item>
-    <item>
-      <title>Xiaomi Smart Speaker Lite Review</title>
-      <link>http://localhost:1313/posts/xiaomi-smart-speaker-lite-review/</link>
-      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/xiaomi-smart-speaker-lite-review/</guid>
-      <description>It&amp;#39;s a good affordable AirPlay 2 Speaker.</description>
     </item>
     <item>
       <title>How to Fix CH340 USB to Serial Driver 3.8 version issue.</title>
@@ -84,13 +70,6 @@
       <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/fix-washing-machine-water-fill-issue/</guid>
       <description>Just repaired my washing machine water flow slow or water pressure low issue.</description>
-    </item>
-    <item>
-      <title>DIY a Floating Wall Mounted TV Console Part 1: Preparation</title>
-      <link>http://localhost:1313/posts/diy-floating-tv-cabinet-part-1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/diy-floating-tv-cabinet-part-1/</guid>
-      <description>Before building a floating TV cabinet, </description>
     </item>
   </channel>
 </rss>
