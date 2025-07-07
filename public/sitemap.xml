@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/3d-printer/</loc>
+    <lastmod>2025-07-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/3d-printing/</loc>
+    <lastmod>2025-07-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-07-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/my-first-3d-printer-creality-hi-3-failed-prints-on-my-first-try/</loc>
+    <lastmod>2025-07-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-07-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-07-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/cloud-data-storage/</loc>
     <lastmod>2024-12-10T00:00:00+00:00</lastmod>
   </url><url>
@@ -17,16 +35,7 @@
     <loc>http://localhost:1313/tags/javascript/</loc>
     <lastmod>2024-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2024-12-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2024-12-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/serverless/</loc>
-    <lastmod>2024-12-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-12-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/telegram-bot/</loc>

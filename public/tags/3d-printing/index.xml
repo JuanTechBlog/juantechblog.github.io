@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>3D Printing on Juan&#39;s Tech Blog</title>
+    <link>http://localhost:1313/tags/3d-printing/</link>
+    <description>Recent content in 3D Printing on Juan&#39;s Tech Blog</description>
+    <generator>Hugo -- 0.147.9</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/3d-printing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First 3D Printer Creality Hi &amp; 3 Failed Prints on My First Try!</title>
+      <link>http://localhost:1313/posts/my-first-3d-printer-creality-hi-3-failed-prints-on-my-first-try/</link>
+      <pubDate>Sun, 06 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/my-first-3d-printer-creality-hi-3-failed-prints-on-my-first-try/</guid>
+      <description>&lt;p&gt;Recently, I got my first 3D printer, the Creality Hi.&lt;/p&gt;
+&lt;p&gt;I believe the usual first 3D print for a beginner should be the 3D Benchy. The printer itself even came preloaded with the model. But I chose to bite off more than I could chew by printing a &lt;strong&gt;&lt;a href=&#34;https://www.printables.com/model/1056340-mi-band-9-magnetic-charging-stand&#34;&gt;Xiaomi Band 9 magnetic charging stand by benbryss&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;youtube-video&#34;&gt;YouTube Video&lt;/h2&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/KSVUwzryUKM?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h2 id=&#34;3-failed-3d-printing-attempts&#34;&gt;3 Failed 3D Printing Attempts&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;First(left) and second(right) attempts to print the Xiaomi band 9 magnetic charging stand.&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/my-first-3d-printer-creality-hi-3-failed-prints-on-my-first-try/imgs/first-second-attempts-3d-printing-xiao-mi-band-9-magnetic-charging-stand.webp&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
