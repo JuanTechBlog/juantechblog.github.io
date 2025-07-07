@@ -9,7 +9,7 @@ canonicalURL: "https://juanstechblog.blogspot.com/2025/07/first-3d-printer-creal
 ShowCanonicalLink: true
 CanonicalLinkText: "Revised. Originally published at Juan's Tech Blog(Blogger/Blogspot)"
 cover:
-    image: imgs\creality-hi-first-printer-first-print-thumbnail.webp
+    image: imgs/creality-hi-first-printer-first-print-thumbnail.webp
     alt: "My First 3D Printer Creality Hi & 3 Failed Prints on My First Try!"
     caption: "My First 3D Printer Creality Hi & 3 Failed Prints on My First Try!"
     relative: true
