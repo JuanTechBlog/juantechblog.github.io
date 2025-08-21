@@ -1,3 +1,4 @@
 User-agent: *
+Allow: /ads.txt
 Disallow:
-Sitemap: http://localhost:1313/sitemap.xml
+Sitemap: https://juantechblog.github.io/sitemap.xml
