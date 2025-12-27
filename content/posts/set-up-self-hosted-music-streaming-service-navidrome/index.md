@@ -20,7 +20,7 @@ I can't stand the price in this economy. So, I stopped subscribing. I'm going to
 
 To be honest, my self-hosted setup is not perfect. You'll see that throughout the rest of it. I'm open to suggestions or recommendations, so feel free to leave them in the comments.
 
-# Install Navidrome
+## Install Navidrome
 To serve the music files, I need software that works as a server. I decided to use [Navidrome](https://www.navidrome.org/). It has all the basic functions and is easy to use.
 
 I have a home server running on Proxmox. I will use the Proxmox VE Helper Scripts to install Navidrome. These scripts make the process very simple.
@@ -34,24 +34,24 @@ Let me starting installing it:
 
 After that, the script ask whether to install File Browser as an add-on. I skip it, because I'm not a fan of the UI and the project is currently in maintenance-only mode, focusing mostly on bug fixes and security patches. I will install file browser Quantum later.
 
-# Configure Navidrome LXC
+## Configure Navidrome LXC
 The Navidrome container need a small tweaks to work smoother: make IP Address static, mount point for music storage and point Navidrome to the music storage.
 
-## Static IP Address
+### Static IP Address
 To make the reachable IP address for Navidrome permanent. I will assign the current IP address as static in container so it doesn't change randomly.
 1.  Select the Navidrome container.
 2.  In Network, select the the first and only network.
 3.  Change IPv4 to static, IPv4 set as current reachable IP address and Gateway as the home router’s address commonly as `192.168.1.1`.    
 4.  Click OK.
 
-## Mount Point
+### Mount Point
 I also mount 20 GB from my NAS(it's actually my 2 TB mirrored hard drives) to the container for music storage.
 1.  Go to Resources.
 2.  Select Add → Mount Point.
 3.  In the popup, set the storage to NAS, Path to `/mnt/nas` and disk size to `20`.
 4.  Click Create.
 
-## Point Music Storage in Navidrome Config File.
+### Point Music Storage in Navidrome Config File.
 After creating the 20 GB mount point, I need to update the Navidrome config file.
 1.  Go to Navidrome container console.
 2.  Enter `nano /etc/navidrome/navidrome.toml`.
@@ -60,7 +60,7 @@ After creating the 20 GB mount point, I need to update the Navidrome config file
 
 Last step, restart the container.
 
-# Install Add-on: File Browser Quantum
+## Install Add-on: File Browser Quantum
 Let me get back to install the File Browser Quantum: 
 1. Get the command from Proxmox VE Helper Scripts' [website](https://community-scripts.github.io/ProxmoxVE/scripts?id=filebrowser-quantum).
 2. Validate the [script](https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/addon/filebrowser-quantum.sh). Copy and paste the script in browser to read.
@@ -72,12 +72,12 @@ Let me get back to install the File Browser Quantum:
 
 Log in to File Browser Quantum to check. 
 
-# Test and Create an Admin Account
+## Test and Create an Admin Account
 Now, log on to Navidrome using the IP address, create an admin account and log in.
 
 Navidrome is up and running, but the library is empty.
 
-# The Problem #1 
+## The Problem #1 
 The first problem I face is the music itself. I don't have any music collection. I never bought music from iTunes or CDs. Don't judge me, I growing up in the content streaming age. 
 
 When I looked into the used/pre-owned CD market, the prices are actually quite reasonable, and digital music stores like iTunes, 7digital and Gobuz also offer good prices from time to time.
@@ -86,7 +86,7 @@ The good thing about buying physical media or making a one-time digital purchase
 
 My plan is to slowly buy my favourite artists' albums, either on CD or from digital music stores when they have good discounts, and build my music library. At the same time, I will use the free-tier YouTube Music to fill the gaps.
 
-# Get Music
+### Get Music
 For now, I bought three albums: One from the iTunes Store and two from the used market. 
 
 The first purchase was the Brat remix album, Brat and it's completely different but also still brat, by Charli XCX for 18 ringgit (about USD 4.22). I think it's the best deal. This remix album includes the original Brat deluxe version, 18 songs, and an additional 17 remix tracks. Charli XCX 's remixes are almost like new songs. I love the original album, the remixes are great, and I got 35 songs for 18 ringgit.
@@ -97,7 +97,7 @@ The Brat remix album can be downloaded directly from iTunes and placed into the 
 
 The two CDs require extra work.
 
-# Ripping CDs
+### Ripping CDs
 I turned the storeroom upside down trying to find an optical drive. I ended up finding three. 
 
 Around ten years ago, almost all laptops came with an optical drive, but not everyone needed it. So, I swapped my family's laptop optical drives with SSD caddies for extra storage. That's where these drives came from. 
@@ -110,14 +110,14 @@ First, I rip the CD into ALAC (Apple Lossless Audio Codec) for backup. Then, I c
 
 Next, I drag all the converted files into the Navidrome music folder. Log into Navidrome and scan for new files. Play some music to test.
 
-# Navidrome Client
+## Navidrome Client
 The web interface I logged into earlier also works as a client. It's good enough for desktop or laptop use.
 
 On mobile, I use an iPhone and mainly use [Amperfy](https://github.com/BLeeEZ/amperfy). It works well for me. It supports Apple CarPlay, offline saving, and Siri (although Siri doesn't work very well).
 
 Another app called [Arpeggi](https://www.reddit.com/r/arpeggiApp/) is also quite good, but it's still in beta testing.
 
-# The Problem #2 
+## The Problem #2 
 Now, I have another issue. Navidrome only works smoothly on my home network. When I'm outside or on 4G, the service becomes unreachable.
 
 There are several ways to make a local service available on the internet. For me, I'm only comfortable using Cloudflare Tunnel. It's the only method I know well.
@@ -128,7 +128,7 @@ Another option is using Cloudflare Warp (1.1.1.1) VPN to connect back to my home
 
 So, my music streaming setup is not fully "streaming". On the local network, yes, it streams. Outside the home network, I mainly rely on offline-saved songs.
 
-# Final words
+## Final words
 This is how I run my self-hosted music streaming service. It's not perfect; I need to spend money on music, and it's not fully streaming.
 
 Maybe you can share how you run your music streaming setup in the comments so I can learn from you.
