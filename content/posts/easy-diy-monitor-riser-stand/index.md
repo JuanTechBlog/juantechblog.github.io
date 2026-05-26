@@ -1,15 +1,9 @@
 ---
 title: "Easy DIY Monitor Riser/Stand."
 description: "Build a Monitor riser/stand with the IKEA wall shelf and furniture legs."
+Summary: "Build a Monitor riser/stand with the IKEA wall shelf and furniture legs."
 date: "2024-05-15"
-tags: ["DIY", "Wood Working", "IKEA"]
-draft: false
-ShowToc: true
-cover:
-    image: easy-diy-monitor-riser.webp
-    alt: "Easy DIY Monitor Riser/Stand."
-    caption: "Easy DIY Monitor Riser/Stand."
-    relative: true
+tags: ["DIY", "Wood Working", "IKEA", "YouTube"]
 ---
 
 {{< youtube En6yiZQn0ZY >}}

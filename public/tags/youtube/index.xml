@@ -1,26 +1,53 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>YouTube on Juan&#39;s Tech Blog</title>
     <link>http://localhost:1313/tags/youtube/</link>
     <description>Recent content in YouTube on Juan&#39;s Tech Blog</description>
-    <generator>Hugo -- 0.147.9</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jan 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/youtube/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Juan</copyright>
+    <lastBuildDate>Sun, 06 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/youtube/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>My First 3D Printer Creality Hi &amp; 3 Failed Prints on My First Try!</title>
+      <link>http://localhost:1313/posts/my-first-3d-printer-creality-hi-3-failed-prints-on-my-first-try/</link>
+      <pubDate>Sun, 06 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/my-first-3d-printer-creality-hi-3-failed-prints-on-my-first-try/</guid>
+      <description>I just tried to 3D print a charging stand for my Xiaomi band 9, but I ended up learning a lot.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/my-first-3d-printer-creality-hi-3-failed-prints-on-my-first-try/feature-creality-hi-first-printer-first-print-thumbnail.webp" />
+    </item>
+    
+    <item>
+      <title>Easy DIY Monitor Riser/Stand.</title>
+      <link>http://localhost:1313/posts/easy-diy-monitor-riser-stand/</link>
+      <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/easy-diy-monitor-riser-stand/</guid>
+      <description>Build a Monitor riser/stand with the IKEA wall shelf and furniture legs.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/easy-diy-monitor-riser-stand/feature-easy-diy-monitor-riser.webp" />
+    </item>
+    
     <item>
       <title>Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant.</title>
       <link>http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/</link>
       <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/</guid>
       <description>Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/feature-diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp" />
     </item>
+    
     <item>
       <title>Fixing Washing Machine Water Fill Issue.</title>
       <link>http://localhost:1313/posts/fix-washing-machine-water-fill-issue/</link>
       <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/fix-washing-machine-water-fill-issue/</guid>
       <description>Just repaired my washing machine water flow slow or water pressure low issue.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/fix-washing-machine-water-fill-issue/feature-water-inlet-valve-from-washing-machine.webp" />
     </item>
+    
   </channel>
 </rss>

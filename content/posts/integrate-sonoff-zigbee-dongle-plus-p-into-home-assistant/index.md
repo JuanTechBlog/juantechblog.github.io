@@ -1,15 +1,9 @@
 ---
 title: "Integrate SONOFF Zigbee USB Dongle 3.0 Plus-P into Home Assistant."
 description: "I just learned how to mount the Zigbee dongle into Docker container and integrate it into Home Assistant."
+summary: "I just learned how to mount the Zigbee dongle into Docker container and integrate it into Home Assistant."
 date: "2024-01-23"
 tags: ["Home Automation", "Smart Home", "Zigbee", "Home Assistant", "Docker", "Docker Compose"]
-draft: false
-ShowToc: true
-cover:
-    image: sonoff-zigbee-3-usb-dongle-plus-p.webp
-    alt: "SONOFF Zigbee 3.0 USB Dongle Plus-P"
-    caption: "SONOFF Zigbee 3.0 USB Dongle Plus-P"
-    relative: true
 ---
 
 Recently, I bought the SONOFF Zigbee 3.0 USB Dongle Plus-P with a great deal. It was RM 84.95 and dropped to RM 64.84. 
@@ -26,7 +20,7 @@ Let's begin.
 
 ## Plug and Mount Zigbee Dongle into Docker Container
 
-![SONOFF Zigbee 3.0 USB Dongle Plus-P plugged into Orange Pi Zero 3](sonoff-zigbee-3-usb-dongle-plus-p-connected-to-orange-pi-zero-3.webp)
+![SONOFF Zigbee 3.0 USB Dongle Plus-P plugged into Orange Pi Zero 3](imgs/sonoff-zigbee-3-usb-dongle-plus-p-connected-to-orange-pi-zero-3.webp)
 The first step is to plug the SONOFF Zigbee 3.0 USB Dongle Plus-P in the computer.
 
 After, we execute the command in the terminal to find the Zigbee dongle's device path as below: 

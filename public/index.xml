@@ -1,90 +1,153 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Juan&#39;s Tech Blog</title>
     <link>http://localhost:1313/</link>
     <description>Recent content on Juan&#39;s Tech Blog</description>
-    <generator>Hugo -- 0.147.9</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 06 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Juan</copyright>
+    <lastBuildDate>Sun, 14 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Set Up a Self-Hosted Music Streaming Service with Navidrome.</title>
+      <link>http://localhost:1313/posts/set-up-self-hosted-music-streaming-service-navidrome/</link>
+      <pubDate>Sun, 14 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/set-up-self-hosted-music-streaming-service-navidrome/</guid>
+      <description>Ditch Spotify, Apple Music, and YouTube Music subscriptions. They’re getting too expensive. I decided to self-host my own music streaming service with Navidrome.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/set-up-self-hosted-music-streaming-service-navidrome/feature-set-up-self-hosted-music-streaming-service-navidrome.webp" />
+    </item>
+    
+    <item>
+      <title>How to Use AppImage for the First Time</title>
+      <link>http://localhost:1313/posts/how-to-use-appimage-for-first-time/</link>
+      <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-to-use-appimage-for-first-time/</guid>
+      <description>I like the portability of AppImage, but the initial setup is not beginner-friendly.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/how-to-use-appimage-for-first-time/feature-use-appimage-first-time.png" />
+    </item>
+    
+    <item>
+      <title>My First 3D Design using TinkerCAD.</title>
+      <link>http://localhost:1313/posts/my-first-3d-design-using-tinkercad/</link>
+      <pubDate>Sat, 19 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/my-first-3d-design-using-tinkercad/</guid>
+      <description>I want to learn 3D design to print real things with my 3D printer. So, I started with something simple: designing a case for my DIY human presence sensor using an ESP32 and LD2410.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/my-first-3d-design-using-tinkercad/feature-first-3d-design-using-tinkercad.webp" />
+    </item>
+    
     <item>
       <title>My First 3D Printer Creality Hi &amp; 3 Failed Prints on My First Try!</title>
       <link>http://localhost:1313/posts/my-first-3d-printer-creality-hi-3-failed-prints-on-my-first-try/</link>
       <pubDate>Sun, 06 Jul 2025 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/my-first-3d-printer-creality-hi-3-failed-prints-on-my-first-try/</guid>
-      <description>&lt;p&gt;Recently, I got my first 3D printer, the Creality Hi.&lt;/p&gt;
-&lt;p&gt;I believe the usual first 3D print for a beginner should be the 3D Benchy. The printer itself even came preloaded with the model. But I chose to bite off more than I could chew by printing a &lt;strong&gt;&lt;a href=&#34;https://www.printables.com/model/1056340-mi-band-9-magnetic-charging-stand&#34;&gt;Xiaomi Band 9 magnetic charging stand by benbryss&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;youtube-video&#34;&gt;YouTube Video&lt;/h2&gt;
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/KSVUwzryUKM?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
-    &lt;/div&gt;
-
-&lt;h2 id=&#34;3-failed-3d-printing-attempts&#34;&gt;3 Failed 3D Printing Attempts&lt;/h2&gt;
-&lt;p&gt;&lt;img alt=&#34;First(left) and second(right) attempts to print the Xiaomi band 9 magnetic charging stand.&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/my-first-3d-printer-creality-hi-3-failed-prints-on-my-first-try/imgs/first-second-attempts-3d-printing-xiao-mi-band-9-magnetic-charging-stand.webp&#34;&gt;&lt;/p&gt;</description>
+      <description>I just tried to 3D print a charging stand for my Xiaomi band 9, but I ended up learning a lot.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/my-first-3d-printer-creality-hi-3-failed-prints-on-my-first-try/feature-creality-hi-first-printer-first-print-thumbnail.webp" />
     </item>
+    
     <item>
       <title>Create a Telegram Bot using JavaScript, Cloudflare Workers and Cloudflare Workers KV.</title>
       <link>http://localhost:1313/posts/create-telegram-bot-using-javascript-cloudflare-workers-cloudflare-workers-kv/</link>
       <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/create-telegram-bot-using-javascript-cloudflare-workers-cloudflare-workers-kv/</guid>
       <description>Step-by-step guide to set up Telegram bot with Botfather, serverless service Cloudflare Workers, data storage Cloudflare Workers KV and coding using JavaScript.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/create-telegram-bot-using-javascript-cloudflare-workers-cloudflare-workers-kv/feature-create-telegram-bot-using-javascript-cloudflare-workers-and-cloudflare-workers-kv.webp" />
     </item>
+    
     <item>
       <title>Running LLM and Stable Diffusion Locally on My Low-End Hardware</title>
       <link>http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/</link>
       <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/</guid>
       <description>Try running Llama 3.2 1B Q8, Llama 3.2 3B Q8 &amp;amp; Stable Diffusion 1.5 on Intel UHD Graphics 630. Also, try to run AI models on the CPU.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/feature-run-llms-and-stable-diffusion-locally-on-intel-uhd-630.webp" />
     </item>
+    
     <item>
       <title>How to Fix CH340 USB to Serial Driver 3.8 version issue.</title>
       <link>http://localhost:1313/posts/how-to-fix-ch340-driver-3-8-issue/</link>
       <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/how-to-fix-ch340-driver-3-8-issue/</guid>
-      <description>CH340 USB-to-Serial Driver 3.8 version issue. It cause the Arduino IDE prompt &amp;#34;A device attached to the system is not functioning&amp;#34; error message.</description>
+      <description>CH340 USB-to-Serial Driver 3.8 version issue. It cause the Arduino IDE prompt &amp;ldquo;A device attached to the system is not functioning&amp;rdquo; error message.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/how-to-fix-ch340-driver-3-8-issue/feature-esp-01s-and-esp-ch340-usb-programmer.webp" />
     </item>
+    
     <item>
       <title>Easy DIY Monitor Riser/Stand.</title>
       <link>http://localhost:1313/posts/easy-diy-monitor-riser-stand/</link>
       <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/easy-diy-monitor-riser-stand/</guid>
       <description>Build a Monitor riser/stand with the IKEA wall shelf and furniture legs.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/easy-diy-monitor-riser-stand/feature-easy-diy-monitor-riser.webp" />
     </item>
+    
     <item>
       <title>DIY WS2812B Addressable LED Light Strip Controller with ESP32 and WLED.</title>
       <link>http://localhost:1313/posts/diy-ws2812b-led-light-strip-controller-esp32-wled/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/diy-ws2812b-led-light-strip-controller-esp32-wled/</guid>
       <description>Guide to Build a WS2812B Addressable LED Light Strip Controller with ESP32 and WLED.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/diy-ws2812b-led-light-strip-controller-esp32-wled/feature-esp32-wled-controls-ws2812b-led-light-strip.webp" />
     </item>
+    
     <item>
       <title>How to install Hugo on Windows 11.</title>
       <link>http://localhost:1313/posts/install-hugo-windows-11/</link>
       <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/install-hugo-windows-11/</guid>
       <description>I just learned how to install Hugo with Go/Golang and Git.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/install-hugo-windows-11/feature-how-to-install-hugo-on-windows11.webp" />
     </item>
+    
     <item>
       <title>Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant.</title>
       <link>http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/</link>
       <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/</guid>
       <description>Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/feature-diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp" />
     </item>
+    
     <item>
       <title>Integrate SONOFF Zigbee USB Dongle 3.0 Plus-P into Home Assistant.</title>
       <link>http://localhost:1313/posts/integrate-sonoff-zigbee-dongle-plus-p-into-home-assistant/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/integrate-sonoff-zigbee-dongle-plus-p-into-home-assistant/</guid>
       <description>I just learned how to mount the Zigbee dongle into Docker container and integrate it into Home Assistant.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/integrate-sonoff-zigbee-dongle-plus-p-into-home-assistant/feature-sonoff-zigbee-3-usb-dongle-plus-p.webp" />
     </item>
+    
     <item>
       <title>Fixing Washing Machine Water Fill Issue.</title>
       <link>http://localhost:1313/posts/fix-washing-machine-water-fill-issue/</link>
       <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/fix-washing-machine-water-fill-issue/</guid>
       <description>Just repaired my washing machine water flow slow or water pressure low issue.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/fix-washing-machine-water-fill-issue/feature-water-inlet-valve-from-washing-machine.webp" />
     </item>
+    
+    <item>
+      <title>Search</title>
+      <link>http://localhost:1313/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/search/</guid>
+      <description>search</description>
+      
+    </item>
+    
   </channel>
 </rss>

@@ -1,18 +1,9 @@
 ---
 title: "My First 3D Printer Creality Hi & 3 Failed Prints on My First Try!"
-description: ""
+description: "I just tried to 3D print a charging stand for my Xiaomi band 9, but I ended up learning a lot."
+summary: "I just tried to 3D print a charging stand for my Xiaomi band 9, but I ended up learning a lot."
 date: "2025-07-06"
-tags: ["3D Printer", "3D Printing"]
-draft: false
-ShowToc: true
-canonicalURL: "https://juanstechblog.blogspot.com/2025/07/first-3d-printer-creality-hi.html"
-ShowCanonicalLink: true
-CanonicalLinkText: "Revised. Originally published at Juan's Tech Blog(Blogger/Blogspot)"
-cover:
-    image: imgs/creality-hi-first-printer-first-print-thumbnail.webp
-    alt: "My First 3D Printer Creality Hi & 3 Failed Prints on My First Try!"
-    caption: "My First 3D Printer Creality Hi & 3 Failed Prints on My First Try!"
-    relative: true
+tags: ["3D Printer", "3D Printing", "YouTube"]
 ---
 
 Recently, I got my first 3D printer, the Creality Hi.

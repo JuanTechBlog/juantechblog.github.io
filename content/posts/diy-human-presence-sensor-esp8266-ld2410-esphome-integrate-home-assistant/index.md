@@ -1,18 +1,9 @@
 ---
 title: "Build Human Presence Sensor with ESP8266, LD2410 and ESPHome, Integrate into Home Assistant."
 description: "Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant."
+summary: "Build a human presence sensor with ESP8266, LD2410 mmWave radar sensor, and ESPHome, integrate into Home Assistant."
 date: "2024-01-29"
 tags: ["Home Automation", "Smart Home", "ESPHome", "Home Assistant", "ESP8266", "LD2410", "Human Presence Sensor", "DIY", "YouTube"]
-draft: false
-ShowToc: true
-canonicalURL: "https://juanstechblog.blogspot.com/2023/12/build-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.html"
-ShowCanonicalLink: true
-CanonicalLinkText: "Revised. Originally published at Juan's Tech Blog(Blogger/Blogspot)"
-cover:
-    image: diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp
-    alt: "DIY Human Presence Sensor with ESP8266, LD2410 and ESPHome."
-    caption: "DIY Human Presence Sensor with ESP8266, LD2410 and ESPHome."
-    relative: true
 ---
 
 The photo above is my cheap human presence sensor with ESP8266 and LD2410C mmWave radar sensor. It costs about RM 27—ESP8266-RM 9.90 and LD2410C-RM 17.61. 
@@ -262,7 +253,7 @@ Hit the __*INSTALL*__ button in n the __⋮__(three vertical dots button) to upl
 ## ESP8266, LD2410 and Parts Assembly.
 Now, we can unplug the USB cable and wire up the LD2410C sensor module with ESP8266.
 
-![DIY Human Presence Sensor with ESP8266 and LD2410 Schematic Diagram](diy-human-presence-sensor-esp8266-ld2410-schematic-diagram.webp)
+![DIY Human Presence Sensor with ESP8266 and LD2410 Schematic Diagram](imgs/diy-human-presence-sensor-esp8266-ld2410-schematic-diagram.webp)
 
 Wire the ESP8266 and LD2410 as below:
 
@@ -288,6 +279,6 @@ We log on to Home Assistant and configure the ESPHome device as below:
 
 
 ## Result
-![LD2410 Human Presence Sensor status in Home Assistant](ld2410-reading-in-home-assistant.webp)
+![LD2410 Human Presence Sensor status in Home Assistant](imgs/ld2410-reading-in-home-assistant.webp)
 
 In the end, we should get the LD2410's reading in the Home Assistant → Settings → Devices and Services → Devices tab(on top of the webpage) → Click the ESP8266 ESPHome device.

@@ -1,10 +1,9 @@
 ---
 title: "How to Use AppImage for the First Time"
 description: "I like the portability of AppImage, but the initial setup is not beginner-friendly."
+summary: "I like the portability of AppImage, but the initial setup is not beginner-friendly."
 date: "2025-10-28"
 tags: ["Linux", "AppImage"]
-draft: false
-ShowToc: true
 ---
 
 "It's a portable app in Windows". This was my first impression when I heard about AppImage. 

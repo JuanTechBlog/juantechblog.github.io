@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Music Streaming Service on Juan&#39;s Tech Blog</title>
+    <link>http://localhost:1313/tags/music-streaming-service/</link>
+    <description>Recent content in Music Streaming Service on Juan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Juan</copyright>
+    <lastBuildDate>Sun, 14 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/music-streaming-service/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Set Up a Self-Hosted Music Streaming Service with Navidrome.</title>
+      <link>http://localhost:1313/posts/set-up-self-hosted-music-streaming-service-navidrome/</link>
+      <pubDate>Sun, 14 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/set-up-self-hosted-music-streaming-service-navidrome/</guid>
+      <description>Ditch Spotify, Apple Music, and YouTube Music subscriptions. They’re getting too expensive. I decided to self-host my own music streaming service with Navidrome.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/set-up-self-hosted-music-streaming-service-navidrome/feature-set-up-self-hosted-music-streaming-service-navidrome.webp" />
+    </item>
+    
+  </channel>
+</rss>

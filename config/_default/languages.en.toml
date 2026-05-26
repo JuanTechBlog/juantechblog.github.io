@@ -1,0 +1,30 @@
+disabled = false
+locale = "en"
+label = "English"
+weight = 1
+title = "Juan's Tech Blog"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  # logo = "img/logo.png"
+  # secondaryLogo = "img/secondary-logo.png"
+  # description = "My awesome website"
+  # copyright = "Copy, _right?_ :thinking_face:"
+
+[params.author]
+  name = "Juan"
+  image = "img/blowfish_logo.png"
+  imageQuality = 96
+  headline = "I'm only human"
+  bio = "A little bit about you"
+  links = [
+    { youtube = "https://youtube.com/@juanthemaker" },
+    { ko-fi = "https://ko-fi.com/juanonkofi" },
+    { telegram = "https://t.me/juanstechblog" },
+    { mastodon = "https://mastodon.instance/@JuanJuanJuan" },
+    { instagram = "https://instagram.com/juanjuanjuanonig" },
+    { tiktok = "https://tiktok.com/@juanontt" },
+  ]

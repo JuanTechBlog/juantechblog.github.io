@@ -1,18 +1,9 @@
 ---
 title: "How to Fix CH340 USB to Serial Driver 3.8 version issue."
 description: "CH340 USB-to-Serial Driver 3.8 version issue. It cause the Arduino IDE prompt \"A device attached to the system is not functioning\" error message."
+summary: "CH340 USB-to-Serial Driver 3.8 version issue. It cause the Arduino IDE prompt \"A device attached to the system is not functioning\" error message."
 date: "2024-06-21"
 tags: ["Arduino", "CH340"]
-draft: false
-ShowToc: true
-canonicalURL: "https://juanstechblog.blogspot.com/2024/06/how-to-fix-ch340-driver-3-8-issue.html"
-ShowCanonicalLink: true
-CanonicalLinkText: "Originally published at Juan's Tech Blog(Blogger/Blogspot)"
-cover:
-    image: esp-01s-and-esp-ch340-usb-programmer.webp
-    alt: ESP-01S and ESP USB Programmer with CH340 chip.
-    caption: ESP-01S and ESP USB Programmer with CH340 chip.
-    relative: true
 ---
 
 

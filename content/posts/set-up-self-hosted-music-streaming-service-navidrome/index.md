@@ -5,12 +5,6 @@ summary: "Ditch Spotify, Apple Music, and YouTube Music subscriptions. They’re
 date: "2025-12-14"
 tags: ["Self-hosted", "Music Streaming Service", "Navidrome"]
 draft: false
-ShowToc: true
-cover:
-    image: imgs/set-up-self-hosted-music-streaming-service-navidrome.webp
-    alt: "Set Up a Self-Hosted Music Streaming Service with Navidrome"
-    caption: "Set Up a Self-Hosted Music Streaming Service with Navidrome"
-    relative: true
 ---
 All the music streaming services have raised their subscription prices in recent years.
 
@@ -19,6 +13,9 @@ Let's just talk about Spotify. Over the past two years, Spotify has increased it
 I can't stand the price in this economy. So, I stopped subscribing. I'm going to self-hosting my own "Spotify" music streaming service.
 
 To be honest, my self-hosted setup is not perfect. You'll see that throughout the rest of it. I'm open to suggestions or recommendations, so feel free to leave them in the comments.
+
+## Video
+{{< youtube LiX3huHxoUk >}}
 
 ## Install Navidrome
 To serve the music files, I need software that works as a server. I decided to use [Navidrome](https://www.navidrome.org/). It has all the basic functions and is easy to use.

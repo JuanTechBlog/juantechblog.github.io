@@ -1,18 +1,9 @@
 ---
 title: "Create a Telegram Bot using JavaScript, Cloudflare Workers and Cloudflare Workers KV."
 description: "Step-by-step guide to set up Telegram bot with Botfather, serverless service Cloudflare Workers, data storage Cloudflare Workers KV and coding using JavaScript."
+summary: "Step-by-step guide to set up Telegram bot with Botfather, serverless service Cloudflare Workers, data storage Cloudflare Workers KV and coding using JavaScript."
 date: "2024-12-10"
 tags: ["cloudflare workers", "cloudflare workers kv", "telegram bot", "serverless", "javascript", "cloud data storage"]
-draft: false
-ShowToc: true
-canonicalURL: "https://juanstechblog.blogspot.com/2025/01/create-telegram-bot-using-javascript-cloudflare-workers-cloudflare-workers-kv.html"
-ShowCanonicalLink: true
-CanonicalLinkText: "Revised. Originally published at Juan's Tech Blog(Blogger/Blogspot)"
-cover:
-    image: imgs/create-telegram-bot-using-javascript-cloudflare-workers-and-cloudflare-workers-kv.webp
-    alt: "Create Telegram Bot using JavaScript, Cloudflare Workers and Cloudflare Workers KV."
-    caption: "Create Telegram Bot using JavaScript, Cloudflare Workers and Cloudflare Workers KV."
-    relative: true
 ---
 
 I want to create a bot that can congratulate other Telegram group members when they make a profit from crypto investments **(Please do your own research before making any investments)**. 
@@ -122,7 +113,6 @@ const MENTION = 'mention';
 const TXT_MENTION = 'text_mention';
 ```
 
-<br>
 
 We will create an entry point for the worker to receive and process requests from the Telegram bot API.
 ```js
@@ -136,8 +126,6 @@ export default {
 };
 ```
 The Workers runtime will inject the KV bindings, variables and secrets in the `env`. We assign them to our variables accordingly and pass the `request` to the `route` function.
-
-<br>
 
 The `route` function will direct the `request` to be processed with `handleWebhook` or set up our worker using the `registerWebhook` and `unRegisterWebhook` functions.
 ```js
@@ -159,7 +147,6 @@ async function route (request) {
 }
 ```
 
-<br>
 
 The `registerWebhook` function will notify our endpoint URL and  `ENV_BOT_SECRET` to the Telegram Bot API for receiving new updates. Obviously, the `unRegisterWebhook` function undoes this.
 ```js
@@ -183,7 +170,7 @@ async function unRegisterWebhook (request) {
   return new Response('ok' in r && r.ok ? 'Ok' : JSON.stringify(r, null, 2))
 }
 ```
-<br>
+
 
 The `handleWebhook` function will check the incoming request's secret token from Telegram Bot API against our `ENV_BOT_SECRET`. After that, it will convert `request` to JSON format and forward it to `onUpdate` function.
 ```js
@@ -208,7 +195,7 @@ async function handleWebhook (request) {
 
 }
 ```
-<br>
+
 
 The `onUpdate` function checks whether the `message` object exists in the `update`. if it does, the function forwards the `message` to `onMessage`.
 
@@ -224,7 +211,7 @@ async function onUpdate (update) {
 }
 ```
 
-<br>
+
 
 The `onMessage` function will perform several checks:
 1. Check whether the `entities` object exists in the message. 
@@ -261,7 +248,7 @@ function onMessage (message) {
 }
 ```
 
-<br>
+
 
 The `sendAnimationAndText` function will retrieve the list of gifs from KV and randomly pick a URL from it. Afterwards, it will pass all the parameters to `apiUrl` to form a query string and send it as a response to the Telegram Bot API.  
 ```js
@@ -281,7 +268,6 @@ async function sendAnimationAndText (chatId, text) {
   }))).json()
 }
 ```
-<br>
 
 The `apiUrl` is a utility function that converts the passed-in parameters to query strings. 
 ```js

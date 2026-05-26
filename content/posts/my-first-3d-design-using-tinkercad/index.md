@@ -1,15 +1,9 @@
 ---
 title: "My First 3D Design using TinkerCAD."
 description: "I want to learn 3D design to print real things with my 3D printer. So, I started with something simple: designing a case for my DIY human presence sensor using an ESP32 and LD2410."
+summary: "I want to learn 3D design to print real things with my 3D printer. So, I started with something simple: designing a case for my DIY human presence sensor using an ESP32 and LD2410."
 date: "2025-07-19"
 tags: ["3D Design", "3D Printing", "TinkerCAD"]
-draft: false
-ShowToc: true
-cover:
-    image: imgs/first-3d-design-using-tinkercad.webp
-    alt: "Three blue 3D-printed electronic enclosures are displayed on a black surface. The left and right designs are marked with red Xs, indicating failure, while the center design has a green checkmark, showing success. The left enclosure is broken apart, the right one has poor fitting, and the center one fits components well and is properly assembled. Text at the bottom reads: \"First 3D Design.\""
-    caption: "First 3D Design"
-    relative: true
 ---
 
 Since I got my first 3D printer, I want to learn 3D design to make my own model to solve my own problem. 

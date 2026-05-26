@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Llama 3.2 3B Q8 on Juan&#39;s Tech Blog</title>
     <link>http://localhost:1313/tags/llama-3.2-3b-q8/</link>
     <description>Recent content in Llama 3.2 3B Q8 on Juan&#39;s Tech Blog</description>
-    <generator>Hugo -- 0.147.9</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 28 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/llama-3.2-3b-q8/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Juan</copyright>
+    <lastBuildDate>Mon, 28 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/llama-3.2-3b-q8/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>Running LLM and Stable Diffusion Locally on My Low-End Hardware</title>
       <link>http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/</link>
       <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/</guid>
       <description>Try running Llama 3.2 1B Q8, Llama 3.2 3B Q8 &amp;amp; Stable Diffusion 1.5 on Intel UHD Graphics 630. Also, try to run AI models on the CPU.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/feature-run-llms-and-stable-diffusion-locally-on-intel-uhd-630.webp" />
     </item>
+    
   </channel>
 </rss>

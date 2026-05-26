@@ -4,12 +4,6 @@ description: "Step-by-step guides to get a .PP.UA domain, set up Cloudfalre as y
 date: "2024-08-24"
 tags: ["Home Assistant", "Cloudflare", ".PP.UA domain", "Docker", "Docker Compose"]
 draft: true
-ShowToc: true
-cover:
-    image: 
-    alt: ""
-    caption: ""
-    relative: true
 ---
 
 ## Intro
