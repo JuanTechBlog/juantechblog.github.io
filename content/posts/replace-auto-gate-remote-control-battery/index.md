@@ -1,7 +1,8 @@
 ---
 title: "Replace My Auto Gate Remote Control Battery"
 description: "My auto gate remote control is not working. The indicator light blinks when I pressed the button. It supposed to be a solid light. I guess the battery just ran out."
-date: "2026-05-28"
+summary: "My auto gate remote control is not working. The indicator light blinks when I pressed the button. It supposed to be a solid light. I guess the battery just ran out."
+date: "2026-05-27"
 tags: ["Auto Gate", "Remote Control", "Repair", "Home Repair", "Home Maintenance"]
 ---
 
@@ -29,9 +30,7 @@ I got my A27/27A battery from a local hardware store, but I believe they are als
 
 When replacing the battery, make sure the polarity is correct: positive to positive and negative to negative.
 
-
 ## Result
-
 Put the cover, screws back on and done. 
 ![The result after the battery replacement. The remote control indicator light stay solid when pressed.](imgs/remote-control-after-battery-replacement.webp "The remote control is working now.")
 
