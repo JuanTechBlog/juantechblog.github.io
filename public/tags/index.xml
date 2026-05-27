@@ -7,7 +7,57 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Juan</copyright>
-    <lastBuildDate>Sun, 14 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Auto Gate</title>
+      <link>http://localhost:1313/tags/auto-gate/</link>
+      <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/auto-gate/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Home Maintenance</title>
+      <link>http://localhost:1313/tags/home-maintenance/</link>
+      <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/home-maintenance/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Home Repair</title>
+      <link>http://localhost:1313/tags/home-repair/</link>
+      <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/home-repair/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Remote Control</title>
+      <link>http://localhost:1313/tags/remote-control/</link>
+      <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/remote-control/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Repair</title>
+      <link>http://localhost:1313/tags/repair/</link>
+      <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/repair/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Music Streaming Service</title>
@@ -230,6 +280,16 @@
     </item>
     
     <item>
+      <title>Router</title>
+      <link>http://localhost:1313/tags/router/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/router/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Stable Diffusion 1.5</title>
       <link>http://localhost:1313/tags/stable-diffusion-1.5/</link>
       <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
@@ -255,6 +315,106 @@
       <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/tags/vulkan/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>.PP.UA Domain</title>
+      <link>http://localhost:1313/tags/.pp.ua-domain/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/.pp.ua-domain/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Cloudflare</title>
+      <link>http://localhost:1313/tags/cloudflare/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/cloudflare/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>http://localhost:1313/tags/docker/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/docker/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Docker Compose</title>
+      <link>http://localhost:1313/tags/docker-compose/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/docker-compose/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Home Assistant</title>
+      <link>http://localhost:1313/tags/home-assistant/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/home-assistant/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>AirPlay 2</title>
+      <link>http://localhost:1313/tags/airplay-2/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/airplay-2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Bluetooth Speaker</title>
+      <link>http://localhost:1313/tags/bluetooth-speaker/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/bluetooth-speaker/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Review</title>
+      <link>http://localhost:1313/tags/review/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/review/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Smart Speaker</title>
+      <link>http://localhost:1313/tags/smart-speaker/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/smart-speaker/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Xiaomi</title>
+      <link>http://localhost:1313/tags/xiaomi/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/xiaomi/</guid>
       <description></description>
       
     </item>
@@ -420,16 +580,6 @@
     </item>
     
     <item>
-      <title>Home Assistant</title>
-      <link>http://localhost:1313/tags/home-assistant/</link>
-      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/tags/home-assistant/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Home Automation</title>
       <link>http://localhost:1313/tags/home-automation/</link>
       <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
@@ -470,26 +620,6 @@
     </item>
     
     <item>
-      <title>Docker</title>
-      <link>http://localhost:1313/tags/docker/</link>
-      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/tags/docker/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Docker Compose</title>
-      <link>http://localhost:1313/tags/docker-compose/</link>
-      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/tags/docker-compose/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Zigbee</title>
       <link>http://localhost:1313/tags/zigbee/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
@@ -500,11 +630,21 @@
     </item>
     
     <item>
-      <title>Repair</title>
-      <link>http://localhost:1313/tags/repair/</link>
-      <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
+      <title>Floating Wall Mounted TV Console</title>
+      <link>http://localhost:1313/tags/floating-wall-mounted-tv-console/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/repair/</guid>
+      <guid>http://localhost:1313/tags/floating-wall-mounted-tv-console/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>TV Wall Upgrage Project</title>
+      <link>http://localhost:1313/tags/tv-wall-upgrage-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/tv-wall-upgrage-project/</guid>
       <description></description>
       
     </item>

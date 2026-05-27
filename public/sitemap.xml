@@ -4,13 +4,19 @@
 
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-12-14T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-12-14T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-21T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/replace-auto-gate-remote-control-battery/</loc>
+    <lastmod>2026-05-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -45,8 +51,26 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/posts/repurpose-old-wifi-router-into-wilress-access-point-using-wds-bridge/</loc>
+    <lastmod>2024-10-28T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/</loc>
     <lastmod>2024-10-28T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</loc>
+    <lastmod>2024-08-24T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/xiaomi-smart-speaker-lite-review/</loc>
+    <lastmod>2024-07-12T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -89,6 +113,11 @@
   <url>
     <loc>http://localhost:1313/posts/fix-washing-machine-water-fill-issue/</loc>
     <lastmod>2024-01-22T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/diy-floating-tv-cabinet-part-1/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>.PP.UA Domain on Juan&#39;s Tech Blog</title>
-    <link>//localhost:1313/tags/.pp.ua-domain/</link>
+    <link>http://localhost:1313/tags/.pp.ua-domain/</link>
     <description>Recent content in .PP.UA Domain on Juan&#39;s Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Juan</copyright>
-    <lastBuildDate>Sat, 24 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/.pp.ua-domain/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/.pp.ua-domain/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How to Access Home Assistant Remotely.</title>
-      <link>//localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</link>
+      <link>http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</link>
       <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</guid>
+      <guid>http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</guid>
       <description></description>
       
     </item>

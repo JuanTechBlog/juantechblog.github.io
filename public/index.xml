@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Juan</copyright>
-    <lastBuildDate>Sun, 14 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Replace My Auto Gate Remote Control Battery</title>
+      <link>http://localhost:1313/posts/replace-auto-gate-remote-control-battery/</link>
+      <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/replace-auto-gate-remote-control-battery/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Set Up a Self-Hosted Music Streaming Service with Navidrome.</title>
@@ -60,6 +70,16 @@
     </item>
     
     <item>
+      <title>Repurpose Old Wi-Fi Router into Wireless Access Point using WDS Bridge</title>
+      <link>http://localhost:1313/posts/repurpose-old-wifi-router-into-wilress-access-point-using-wds-bridge/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/repurpose-old-wifi-router-into-wilress-access-point-using-wds-bridge/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Running LLM and Stable Diffusion Locally on My Low-End Hardware</title>
       <link>http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/</link>
       <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
@@ -67,6 +87,26 @@
       <guid>http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/</guid>
       <description>Try running Llama 3.2 1B Q8, Llama 3.2 3B Q8 &amp;amp; Stable Diffusion 1.5 on Intel UHD Graphics 630. Also, try to run AI models on the CPU.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/run-local-llm-stable-diffusion-locally-low-end-hardware/feature-run-llms-and-stable-diffusion-locally-on-intel-uhd-630.webp" />
+    </item>
+    
+    <item>
+      <title>How to Access Home Assistant Remotely.</title>
+      <link>http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/home-asssitant-remote-access-cloudflare-tunnel-pp-ua-domain/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Xiaomi Smart Speaker Lite Review</title>
+      <link>http://localhost:1313/posts/xiaomi-smart-speaker-lite-review/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/xiaomi-smart-speaker-lite-review/</guid>
+      <description></description>
+      
     </item>
     
     <item>
@@ -137,6 +177,16 @@
       <guid>http://localhost:1313/posts/fix-washing-machine-water-fill-issue/</guid>
       <description>Just repaired my washing machine water flow slow or water pressure low issue.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/fix-washing-machine-water-fill-issue/feature-water-inlet-valve-from-washing-machine.webp" />
+    </item>
+    
+    <item>
+      <title>DIY a Floating Wall Mounted TV Console Part 1: Preparation</title>
+      <link>http://localhost:1313/posts/diy-floating-tv-cabinet-part-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diy-floating-tv-cabinet-part-1/</guid>
+      <description></description>
+      
     </item>
     
     <item>

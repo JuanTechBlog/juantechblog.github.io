@@ -29,5 +29,15 @@
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant/feature-diy-human-presence-sensor-esp8266-ld2410-esphome-integrate-home-assistant.webp" />
     </item>
     
+    <item>
+      <title>DIY a Floating Wall Mounted TV Console Part 1: Preparation</title>
+      <link>http://localhost:1313/posts/diy-floating-tv-cabinet-part-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diy-floating-tv-cabinet-part-1/</guid>
+      <description></description>
+      
+    </item>
+    
   </channel>
 </rss>
